@@ -221,7 +221,8 @@ html {
   border-radius: 0.5rem;
 }
 
-.discography-item:hover .play-button-overlay {
+.discography-item:hover .play-button-overlay,
+.image-wrapper:hover .play-button-overlay {
   opacity: 1;
 }
 
