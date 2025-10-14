@@ -269,3 +269,27 @@ html {
   background: rgba(220, 38, 38, 0.95);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
+
+/* Hue rotation animation for thank you image */
+@keyframes hue-rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.thank-you-image {
+  transition: filter 1s ease;
+}
+
+.thank-you-image:hover {
+  animation: hue-rotate 5s linear infinite;
+}
+
+.thank-you-image:not(:hover) {
+  filter: hue-rotate(0deg);
+  transition: filter 1s ease;
+}
