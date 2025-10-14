@@ -8,34 +8,16 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body class="bg-white text-gray-900">
-    <!-- Mobile Menu Button -->
-    <button
-      id="mobileMenuBtn"
-      class="lg:hidden fixed top-4 left-4 z-50 p-2 bg-white rounded-lg shadow-lg"
-    >
-      <svg
-        class="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
+    <!-- Sidenav Container with Grid Layout -->
+    <div id="sidenav-container">
+      <!-- Mobile Menu Button -->
+      <a
+        href="#sidenav-open"
+        id="sidenav-button"
+        class="hamburger"
+        title="Open Menu"
+        aria-label="Open Menu"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        >
-        </path>
-      </svg>
-    </button>
-
-    <!-- Sidebar Navigation -->
-    <aside
-      id="sidebar"
-      class="mobile-menu fixed left-0 top-0 h-full w-64 bg-white border-r border-gray-200 pt-0 px-8 pb-8 flex flex-col justify-between z-40 lg:translate-x-0"
-    >
-      <!-- Close button for mobile -->
-      <button id="closeMobileMenu" class="lg:hidden absolute top-4 right-4 p-2">
         <svg
           class="w-6 h-6"
           fill="none"
@@ -46,522 +28,565 @@
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
+            d="M4 6h16M4 12h16M4 18h16"
           >
           </path>
         </svg>
-      </button>
+      </a>
 
-      <div>
-        <div class="mb-6">
-          <img
-            src="public/keychain.png"
-            alt="Berryblue keychain"
-            class="w-16 h-16 object-contain mx-auto"
-          >
-        </div>
-        <h1 class="text-2xl font-bold mb-8">Hello! I'm Berryblue 👋🏽</h1>
-        <nav class="space-y-4">
-          <a
-            href="#about"
-            class="nav-link block text-gray-600 hover:text-gray-900"
-          >About</a>
-          <a
-            href="#music"
-            class="nav-link block text-gray-600 hover:text-gray-900"
-          >Music</a>
-          <a
-            href="#projects"
-            class="nav-link block text-gray-600 hover:text-gray-900"
-          >Projects</a>
-          <a
-            href="#contact"
-            class="nav-link block text-gray-600 hover:text-gray-900"
-          >Contact</a>
-        </nav>
-      </div>
-
-      <div class="flex flex-wrap gap-4">
+      <!-- Sidebar Navigation -->
+      <aside
+        id="sidenav-open"
+        class="sidenav"
+        role="complementary"
+        aria-label="Main navigation"
+      >
+        <!-- Close button for mobile -->
         <a
-          href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
-          target="_blank"
-          class="text-gray-600 hover:text-gray-900"
-          title="Spotify"
-        >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://www.instagram.com/berryblue"
-          target="_blank"
-          class="text-gray-600 hover:text-gray-900"
-          title="Instagram"
-        >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://tiktok.com/@berryblue"
-          target="_blank"
-          class="text-gray-600 hover:text-gray-900"
-          title="TikTok"
-        >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://www.youtube.com/@berryblue"
-          target="_blank"
-          class="text-gray-600 hover:text-gray-900"
-          title="YouTube"
-        >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://music.apple.com/artist/berryblue"
-          target="_blank"
-          class="text-gray-600 hover:text-gray-900"
-          title="Apple Music"
-        >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://soundcloud.com/berryblue"
-          target="_blank"
-          class="text-gray-600 hover:text-gray-900"
-          title="SoundCloud"
+          href="#"
+          id="sidenav-close"
+          title="Close Menu"
+          aria-label="Close Menu"
         >
           <svg
             class="w-6 h-6"
-            fill="currentColor"
-            viewBox="-271 345.8 256 111.2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            <g>
-              <path
-                d="M-238.4,398.1c-0.8,0-1.4,0.6-1.5,1.5l-2.3,28l2.3,27.1c0.1,0.8,0.7,1.5,1.5,1.5c0.8,0,1.4-0.6,1.5-1.5l2.6-27.1l-2.6-28 C-237,398.7-237.7,398.1-238.4,398.1z"
-              />
-              <path
-                d="M-228.2,399.9c-0.9,0-1.7,0.7-1.7,1.7l-2.1,26l2.1,27.3c0.1,1,0.8,1.7,1.7,1.7c0.9,0,1.6-0.7,1.7-1.7l2.4-27.3l-2.4-26 C-226.6,400.6-227.3,399.9-228.2,399.9z"
-              />
-              <path
-                d="M-258.6,403.5c-0.5,0-1,0.4-1.1,1l-2.5,23l2.5,22.5c0.1,0.6,0.5,1,1.1,1c0.5,0,1-0.4,1.1-1l2.9-22.5l-2.9-23 C-257.7,404-258.1,403.5-258.6,403.5z"
-              />
-              <path
-                d="M-268.1,412.3c-0.5,0-1,0.4-1,1l-1.9,14.3l1.9,14c0.1,0.6,0.5,1,1,1s0.9-0.4,1-1l2.2-14l-2.2-14.2 C-267.2,412.8-267.6,412.3-268.1,412.3z"
-              />
-              <path
-                d="M-207.5,373.5c-1.2,0-2.1,0.9-2.2,2.1l-1.9,52l1.9,27.2c0.1,1.2,1,2.1,2.2,2.1s2.1-0.9,2.2-2.1l2.1-27.2l-2.1-52 C-205.4,374.4-206.4,373.5-207.5,373.5z"
-              />
-              <path
-                d="M-248.6,399c-0.7,0-1.2,0.5-1.3,1.3l-2.4,27.3l2.4,26.3c0.1,0.7,0.6,1.3,1.3,1.3c0.7,0,1.2-0.5,1.3-1.2l2.7-26.3l-2.7-27.3 C-247.4,399.6-247.9,399-248.6,399z"
-              />
-              <path
-                d="M-217.9,383.4c-1,0-1.9,0.8-1.9,1.9l-2,42.3l2,27.3c0.1,1.1,0.9,1.9,1.9,1.9s1.9-0.8,1.9-1.9l2.3-27.3l-2.3-42.3 C-216,384.2-216.9,383.4-217.9,383.4z"
-              />
-              <path
-                d="M-154.4,359.3c-1.8,0-3.2,1.4-3.2,3.2l-1.2,65l1.2,26.1c0,1.8,1.5,3.2,3.2,3.2c1.8,0,3.2-1.5,3.2-3.2l1.4-26.1l-1.4-65 C-151.1,360.8-152.6,359.3-154.4,359.3z"
-              />
-              <path
-                d="M-197.1,368.9c-1.3,0-2.3,1-2.4,2.4l-1.8,56.3l1.8,26.9c0,1.3,1.1,2.3,2.4,2.3s2.3-1,2.4-2.4l2-26.9l-2-56.3 C-194.7,370-195.8,368.9-197.1,368.9z"
-              />
-              <path
-                d="M-46.5,394c-4.3,0-8.4,0.9-12.2,2.4C-61.2,368-85,345.8-114,345.8c-7.1,0-14,1.4-20.1,3.8c-2.4,0.9-3,1.9-3,3.7v99.9 c0,1.9,1.5,3.5,3.4,3.7c0.1,0,86.7,0,87.3,0c17.4,0,31.5-14.1,31.5-31.5C-15,408.1-29.1,394-46.5,394z"
-              />
-              <path
-                d="M-143.6,353.2c-1.9,0-3.4,1.6-3.5,3.5l-1.4,70.9l1.4,25.7c0,1.9,1.6,3.4,3.5,3.4c1.9,0,3.4-1.6,3.5-3.5l1.5-25.8l-1.5-70.9 C-140.2,354.8-141.7,353.2-143.6,353.2z"
-              />
-              <path
-                d="M-186.5,366.8c-1.4,0-2.5,1.1-2.6,2.6l-1.6,58.2l1.6,26.7c0,1.4,1.2,2.6,2.6,2.6s2.5-1.1,2.6-2.6l1.8-26.7l-1.8-58.2 C-184,367.9-185.1,366.8-186.5,366.8z"
-              />
-              <path
-                d="M-175.9,368.1c-1.5,0-2.8,1.2-2.8,2.8l-1.5,56.7l1.5,26.5c0,1.6,1.3,2.8,2.8,2.8s2.8-1.2,2.8-2.8l1.7-26.5l-1.7-56.7 C-173.1,369.3-174.3,368.1-175.9,368.1z"
-              />
-              <path
-                d="M-165.2,369.9c-1.7,0-3,1.3-3,3l-1.4,54.7l1.4,26.3c0,1.7,1.4,3,3,3c1.7,0,3-1.3,3-3l1.5-26.3l-1.5-54.7 C-162.2,371.3-163.5,369.9-165.2,369.9z"
-              />
-            </g>
-          </svg>
-        </a>
-        <a
-          href="https://linktr.ee/blueswebsite"
-          target="_blank"
-          class="text-gray-600 hover:text-gray-900"
-          title="All Links"
-        >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 80 97.7">
             <path
-              d="M0.2,33.1h24.2L7.1,16.7l9.5-9.6L33,23.8V0h14.2v23.8L63.6,7.1l9.5,9.6L55.8,33H80v13.5H55.7l17.3,16.7l-9.5,9.4L40,49.1
-	L16.5,72.7L7,63.2l17.3-16.7H0V33.1H0.2z M33.1,65.8h14.2v32H33.1V65.8z"
-            />
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            >
+            </path>
           </svg>
         </a>
-      </div>
-    </aside>
 
-    <!-- Main Content -->
-    <main class="lg:ml-64 p-8 lg:p-16">
-      <!-- About Section -->
-      <section id="about" class="mb-20">
-        <div class="max-w-2xl">
-          <img
-            src="public/berryblue-profile.jpg"
-            alt="Berryblue"
-            class="w-48 h-48 rounded-full object-cover mb-8"
-          >
-          <h2 class="text-4xl font-bold mb-6">About</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Hey! I'm Berryblue, a pop artist from Dallas-Fort Worth making waves
-            in the music scene. My sound blends dreamy pop melodies with honest,
-            emotional storytelling that connects with listeners on a deep level.
-          </p>
-          <p class="text-gray-600 leading-relaxed">
-            From TikTok viral moments to sold-out shows, I'm on a mission to
-            create music that makes you feel something real. Every song is a
-            piece of my story, and I can't wait to share it with you.
-          </p>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section class="mb-20">
-        <h2 class="text-4xl font-bold mb-8">Skills</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Navigation Content -->
+        <nav class="nav" role="navigation" aria-label="Main menu">
           <div>
-            <h3 class="text-xl font-semibold mb-4">Music Production</h3>
-            <ul class="space-y-2 text-gray-600">
-              <li>Songwriting</li>
-              <li>Vocal Performance</li>
-              <li>Music Composition</li>
-              <li>Studio Recording</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-4">Performance</h3>
-            <ul class="space-y-2 text-gray-600">
-              <li>Live Shows</li>
-              <li>Stage Presence</li>
-              <li>Audience Engagement</li>
-              <li>Music Videos</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold mb-4">Digital</h3>
-            <ul class="space-y-2 text-gray-600">
-              <li>Social Media</li>
-              <li>Content Creation</li>
-              <li>Brand Development</li>
-              <li>Community Building</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Photo Gallery -->
-      <section class="mb-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <img
-            src="public/selfish-artwork.jpg"
-            alt="Berryblue Selfish artwork"
-            class="w-full h-64 object-cover rounded-lg"
-          >
-          <img
-            src="public/berryblue-artistic.jpg"
-            alt="Berryblue artistic photo"
-            class="w-full h-64 object-cover rounded-lg"
-          >
-          <img
-            src="public/berryblue-street.jpg"
-            alt="Berryblue street photo"
-            class="w-full h-64 object-cover rounded-lg"
-          >
-          <img
-            src="public/blue-disco-ball.png"
-            alt="Blue disco ball"
-            class="w-full h-64 object-cover rounded-lg bg-gray-50"
-          >
-        </div>
-      </section>
-
-      <!-- Music Section -->
-      <section id="music" class="mb-20">
-        <h2 class="text-4xl font-bold mb-6">Music</h2>
-        <p class="text-gray-600 leading-relaxed mb-8 max-w-2xl">
-          I create pop music that's honest, emotional, and real. Each song tells
-          a story from my life, exploring themes of love, heartbreak,
-          friendship, and self-discovery. My debut album "Uh Oh" is out now,
-          featuring my latest single "Just Friends" and more. My music has
-          resonated with fans across TikTok, Spotify, YouTube, and beyond.
-        </p>
-        <a
-          href="#contact"
-          class="inline-block px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-        >
-          Listen Now
-        </a>
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects" class="mb-20">
-        <h2 class="text-4xl font-bold mb-8">Latest Release</h2>
-
-        <!-- Just Friends - Featured -->
-        <div
-          class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden mb-8"
-        >
-          <img
-            src="public/berryblue-street.jpg"
-            alt="Just Friends single artwork"
-            class="w-full h-80 object-cover"
-          >
-          <div class="p-6">
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium"
-              >New Single</span>
-              <span
-                class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
-              >Pop</span>
-              <span
-                class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
-              >Emotional</span>
+            <h1 class="text-2xl font-bold mb-8 brand-name">
+              Hello! I'm Berryblue 🫐
+            </h1>
+            <div class="space-y-4">
+              <a
+                href="#about"
+                class="nav-link block text-gray-600 hover:text-gray-900"
+              >About</a>
+              <a
+                href="#music"
+                class="nav-link block text-gray-600 hover:text-gray-900"
+              >Music</a>
+              <a
+                href="#projects"
+                class="nav-link block text-gray-600 hover:text-gray-900"
+              >Projects</a>
+              <a
+                href="#contact"
+                class="nav-link block text-gray-600 hover:text-gray-900"
+              >Contact</a>
             </div>
-            <h3 class="text-2xl font-bold mb-3">Just Friends</h3>
-            <p class="text-gray-600 mb-4">
-              My latest single based on a true story. "Just Friends" explores
-              the complicated emotions of wanting something more from a
-              relationship while being stuck in the friend zone. It's raw,
-              honest, and deeply personal.
-            </p>
-            <p class="text-gray-500 text-sm italic mb-4">
-              "here i am... although you haven't showed me love again... wish i
-              was more to you..."
-            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
             <a
               href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
               target="_blank"
-              class="inline-block px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+              class="text-gray-600 hover:text-gray-900"
+              title="Spotify"
             >
-              Listen on Spotify
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/berryblue"
+              target="_blank"
+              class="text-gray-600 hover:text-gray-900"
+              title="Instagram"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://tiktok.com/@berryblue"
+              target="_blank"
+              class="text-gray-600 hover:text-gray-900"
+              title="TikTok"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@berryblue"
+              target="_blank"
+              class="text-gray-600 hover:text-gray-900"
+              title="YouTube"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://music.apple.com/artist/berryblue"
+              target="_blank"
+              class="text-gray-600 hover:text-gray-900"
+              title="Apple Music"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://soundcloud.com/berrybluee"
+              target="_blank"
+              class="text-gray-600 hover:text-gray-900"
+              title="SoundCloud"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="-271 345.8 256 111.2"
+              >
+                <g>
+                  <path
+                    d="M-238.4,398.1c-0.8,0-1.4,0.6-1.5,1.5l-2.3,28l2.3,27.1c0.1,0.8,0.7,1.5,1.5,1.5c0.8,0,1.4-0.6,1.5-1.5l2.6-27.1l-2.6-28 C-237,398.7-237.7,398.1-238.4,398.1z"
+                  />
+                  <path
+                    d="M-228.2,399.9c-0.9,0-1.7,0.7-1.7,1.7l-2.1,26l2.1,27.3c0.1,1,0.8,1.7,1.7,1.7c0.9,0,1.6-0.7,1.7-1.7l2.4-27.3l-2.4-26 C-226.6,400.6-227.3,399.9-228.2,399.9z"
+                  />
+                  <path
+                    d="M-258.6,403.5c-0.5,0-1,0.4-1.1,1l-2.5,23l2.5,22.5c0.1,0.6,0.5,1,1.1,1c0.5,0,1-0.4,1.1-1l2.9-22.5l-2.9-23 C-257.7,404-258.1,403.5-258.6,403.5z"
+                  />
+                  <path
+                    d="M-268.1,412.3c-0.5,0-1,0.4-1,1l-1.9,14.3l1.9,14c0.1,0.6,0.5,1,1,1s0.9-0.4,1-1l2.2-14l-2.2-14.2 C-267.2,412.8-267.6,412.3-268.1,412.3z"
+                  />
+                  <path
+                    d="M-207.5,373.5c-1.2,0-2.1,0.9-2.2,2.1l-1.9,52l1.9,27.2c0.1,1.2,1,2.1,2.2,2.1s2.1-0.9,2.2-2.1l2.1-27.2l-2.1-52 C-205.4,374.4-206.4,373.5-207.5,373.5z"
+                  />
+                  <path
+                    d="M-248.6,399c-0.7,0-1.2,0.5-1.3,1.3l-2.4,27.3l2.4,26.3c0.1,0.7,0.6,1.3,1.3,1.3c0.7,0,1.2-0.5,1.3-1.2l2.7-26.3l-2.7-27.3 C-247.4,399.6-247.9,399-248.6,399z"
+                  />
+                  <path
+                    d="M-217.9,383.4c-1,0-1.9,0.8-1.9,1.9l-2,42.3l2,27.3c0.1,1.1,0.9,1.9,1.9,1.9s1.9-0.8,1.9-1.9l2.3-27.3l-2.3-42.3 C-216,384.2-216.9,383.4-217.9,383.4z"
+                  />
+                  <path
+                    d="M-154.4,359.3c-1.8,0-3.2,1.4-3.2,3.2l-1.2,65l1.2,26.1c0,1.8,1.5,3.2,3.2,3.2c1.8,0,3.2-1.5,3.2-3.2l1.4-26.1l-1.4-65 C-151.1,360.8-152.6,359.3-154.4,359.3z"
+                  />
+                  <path
+                    d="M-197.1,368.9c-1.3,0-2.3,1-2.4,2.4l-1.8,56.3l1.8,26.9c0,1.3,1.1,2.3,2.4,2.3s2.3-1,2.4-2.4l2-26.9l-2-56.3 C-194.7,370-195.8,368.9-197.1,368.9z"
+                  />
+                  <path
+                    d="M-46.5,394c-4.3,0-8.4,0.9-12.2,2.4C-61.2,368-85,345.8-114,345.8c-7.1,0-14,1.4-20.1,3.8c-2.4,0.9-3,1.9-3,3.7v99.9 c0,1.9,1.5,3.5,3.4,3.7c0.1,0,86.7,0,87.3,0c17.4,0,31.5-14.1,31.5-31.5C-15,408.1-29.1,394-46.5,394z"
+                  />
+                  <path
+                    d="M-143.6,353.2c-1.9,0-3.4,1.6-3.5,3.5l-1.4,70.9l1.4,25.7c0,1.9,1.6,3.4,3.5,3.4c1.9,0,3.4-1.6,3.5-3.5l1.5-25.8l-1.5-70.9 C-140.2,354.8-141.7,353.2-143.6,353.2z"
+                  />
+                  <path
+                    d="M-186.5,366.8c-1.4,0-2.5,1.1-2.6,2.6l-1.6,58.2l1.6,26.7c0,1.4,1.2,2.6,2.6,2.6s2.5-1.1,2.6-2.6l1.8-26.7l-1.8-58.2 C-184,367.9-185.1,366.8-186.5,366.8z"
+                  />
+                  <path
+                    d="M-175.9,368.1c-1.5,0-2.8,1.2-2.8,2.8l-1.5,56.7l1.5,26.5c0,1.6,1.3,2.8,2.8,2.8s2.8-1.2,2.8-2.8l1.7-26.5l-1.7-56.7 C-173.1,369.3-174.3,368.1-175.9,368.1z"
+                  />
+                  <path
+                    d="M-165.2,369.9c-1.7,0-3,1.3-3,3l-1.4,54.7l1.4,26.3c0,1.7,1.4,3,3,3c1.7,0,3-1.3,3-3l1.5-26.3l-1.5-54.7 C-162.2,371.3-163.5,369.9-165.2,369.9z"
+                  />
+                </g>
+              </svg>
+            </a>
+            <a
+              href="https://linktr.ee/blueswebsite"
+              target="_blank"
+              class="text-gray-600 hover:text-gray-900"
+              title="All Links"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 80 97.7">
+                <path
+                  d="M0.2,33.1h24.2L7.1,16.7l9.5-9.6L33,23.8V0h14.2v23.8L63.6,7.1l9.5,9.6L55.8,33H80v13.5H55.7l17.3,16.7l-9.5,9.4L40,49.1
+	L16.5,72.7L7,63.2l17.3-16.7H0V33.1H0.2z M33.1,65.8h14.2v32H33.1V65.8z"
+                />
+              </svg>
             </a>
           </div>
-        </div>
+        </nav>
 
-        <h2 class="text-4xl font-bold mb-8 mt-16">More Projects</h2>
+        <!-- Escape backdrop -->
+        <a href="#" class="escape"></a>
+      </aside>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Brooklyn Show -->
-          <div
-            class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden"
-          >
+      <!-- Main Content -->
+      <main class="main-content" role="main">
+        <!-- About Section -->
+        <section id="about" class="mb-20">
+          <div class="max-w-2xl">
             <img
-              src="public/brooklyn-concert.jpg"
-              alt="Brooklyn concert poster"
-              class="w-full h-64 object-cover"
+              src="public/berryblue-profile.jpg"
+              alt="Berryblue"
+              class="w-48 h-48 rounded-full object-cover mb-8"
             >
-            <div class="p-6">
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
-                >Live Show</span>
-                <span
-                  class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
-                >Brooklyn</span>
-              </div>
-              <h3 class="text-2xl font-bold mb-3">Live in Brooklyn, NY</h3>
-              <p class="text-gray-600 mb-4">
-                Performing at The Sultan Room on December 15th with special
-                guests Nafeesisboujee and Astrus. An intimate night of music and
-                connection.
-              </p>
-              <button
-                class="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-              >
-                Get Tickets
-              </button>
+            <h2 class="text-4xl font-bold mb-6 section-title">About</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Hey! I'm Berryblue, a pop artist from Dallas-Fort Worth making
+              waves in the music scene. My sound blends dreamy pop melodies with
+              honest, emotional storytelling that connects with listeners on a
+              deep level.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              From TikTok viral moments to sold-out shows, I'm on a mission to
+              create music that makes you feel something real. Every song is a
+              piece of my story, and I can't wait to share it with you.
+            </p>
+          </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="mb-20">
+          <h2 class="text-4xl font-bold mb-8 section-title">Skills</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Music Production</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>Songwriting</li>
+                <li>Vocal Performance</li>
+                <li>Music Composition</li>
+                <li>Studio Recording</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Performance</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>Live Shows</li>
+                <li>Stage Presence</li>
+                <li>Audience Engagement</li>
+                <li>Music Videos</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-4">Digital</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>Social Media</li>
+                <li>Content Creation</li>
+                <li>Brand Development</li>
+                <li>Community Building</li>
+              </ul>
             </div>
           </div>
+        </section>
 
-          <!-- Selfish -->
-          <div
-            class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden"
-          >
+        <!-- Photo Gallery -->
+        <section class="mb-20">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <img
               src="public/selfish-artwork.jpg"
-              alt="Selfish artwork"
-              class="w-full h-64 object-cover"
+              alt="Berryblue Selfish artwork"
+              class="w-full h-64 object-cover rounded-lg"
+            >
+            <img
+              src="public/berryblue-artistic.jpg"
+              alt="Berryblue artistic photo"
+              class="w-full h-64 object-cover rounded-lg"
+            >
+            <img
+              src="public/berryblue-street.jpg"
+              alt="Berryblue street photo"
+              class="w-full h-64 object-cover rounded-lg"
+            >
+            <img
+              src="public/blue-disco-ball.png"
+              alt="Blue disco ball"
+              class="w-full h-64 object-cover rounded-lg bg-gray-50"
+            >
+          </div>
+        </section>
+
+        <!-- Music Section -->
+        <section id="music" class="mb-20">
+          <h2 class="text-4xl font-bold mb-6 section-title">Music</h2>
+          <p class="text-gray-600 leading-relaxed mb-8 max-w-2xl">
+            I create pop music that's honest, emotional, and real. Each song
+            tells a story from my life, exploring themes of love, heartbreak,
+            friendship, and self-discovery. My debut album "Uh Oh" is out now,
+            featuring my latest single "Just Friends" and more. My music has
+            resonated with fans across TikTok, Spotify, YouTube, and beyond.
+          </p>
+          <a
+            href="#contact"
+            class="inline-block px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+          >
+            Listen Now
+          </a>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-20">
+          <h2 class="text-4xl font-bold mb-8 section-title">Latest Release</h2>
+
+          <!-- Just Friends - Featured -->
+          <div
+            class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden mb-8"
+          >
+            <img
+              src="public/berryblue-street.jpg"
+              alt="Just Friends single artwork"
+              class="w-full h-80 object-cover"
             >
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-4">
                 <span
-                  class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium"
-                >Single</span>
+                  class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium"
+                >New Single</span>
                 <span
-                  class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium"
-                >Pop Art</span>
+                  class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                >Pop</span>
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                >Emotional</span>
               </div>
-              <h3 class="text-2xl font-bold mb-3">Selfish</h3>
+              <h3 class="text-2xl font-bold mb-3 project-title">
+                Just Friends
+              </h3>
               <p class="text-gray-600 mb-4">
-                A bold pop anthem with striking visual aesthetics. This track
-                showcases my evolution as an artist and my commitment to
-                creating memorable, impactful music.
+                My latest single based on a true story. "Just Friends" explores
+                the complicated emotions of wanting something more from a
+                relationship while being stuck in the friend zone. It's raw,
+                honest, and deeply personal.
+              </p>
+              <p class="text-gray-500 text-sm italic mb-4 quote-text">
+                "here i am... although you haven't showed me love again... wish
+                i was more to you..."
               </p>
               <a
                 href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
                 target="_blank"
                 class="inline-block px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
               >
-                Stream Now
+                Listen on Spotify
               </a>
             </div>
           </div>
 
-          <!-- TikTok Viral -->
-          <div
-            class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden"
-          >
-            <img
-              src="public/berryblue-artistic.jpg"
-              alt="TikTok content"
-              class="w-full h-64 object-cover"
+          <h2 class="text-4xl font-bold mb-8 mt-16 section-title">
+            More Projects
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Brooklyn Show -->
+            <div
+              class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden"
             >
-            <div class="p-6">
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
-                >Social Media</span>
-                <span
-                  class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium"
-                >Viral</span>
-              </div>
-              <h3 class="text-2xl font-bold mb-3">TikTok Success</h3>
-              <p class="text-gray-600 mb-4">
-                Building a community of fans through authentic content and viral
-                moments. Join me on TikTok for behind-the-scenes looks, new
-                music previews, and more.
-              </p>
-              <a
-                href="https://tiktok.com/@berryblue"
-                target="_blank"
-                class="inline-block px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+              <img
+                src="public/brooklyn-concert.jpg"
+                alt="Brooklyn concert poster"
+                class="w-full h-64 object-cover"
               >
-                Follow on TikTok
-              </a>
+              <div class="p-6">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                  >Live Show</span>
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
+                  >Brooklyn</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 project-title">
+                  Live in Brooklyn, NY
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Performing at The Sultan Room on December 15th with special
+                  guests Nafeesisboujee and Astrus. An intimate night of music
+                  and connection.
+                </p>
+                <button
+                  class="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                >
+                  Get Tickets
+                </button>
+              </div>
             </div>
-          </div>
 
-          <!-- Music Journey -->
-          <div
-            class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden"
-          >
-            <img
-              src="public/berryblue-profile.jpg"
-              alt="Berryblue portrait"
-              class="w-full h-64 object-cover"
+            <!-- Selfish -->
+            <div
+              class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden"
             >
-            <div class="p-6">
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
-                >Artist</span>
-                <span
-                  class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
-                >DFW</span>
-              </div>
-              <h3 class="text-2xl font-bold mb-3">The Journey</h3>
-              <p class="text-gray-600 mb-4">
-                From Dallas-Fort Worth to stages across the country, follow my
-                journey as I create music that connects with people and tells
-                stories that matter.
-              </p>
-              <a
-                href="#contact"
-                class="inline-block px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+              <img
+                src="public/selfish-artwork.jpg"
+                alt="Selfish artwork"
+                class="w-full h-64 object-cover"
               >
-                Learn More
-              </a>
+              <div class="p-6">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium"
+                  >Single</span>
+                  <span
+                    class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium"
+                  >Pop Art</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 project-title">Selfish</h3>
+                <p class="text-gray-600 mb-4">
+                  A bold pop anthem with striking visual aesthetics. This track
+                  showcases my evolution as an artist and my commitment to
+                  creating memorable, impactful music.
+                </p>
+                <a
+                  href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
+                  target="_blank"
+                  class="inline-block px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                >
+                  Stream Now
+                </a>
+              </div>
+            </div>
+
+            <!-- TikTok Viral -->
+            <div
+              class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <img
+                src="public/berryblue-artistic.jpg"
+                alt="TikTok content"
+                class="w-full h-64 object-cover"
+              >
+              <div class="p-6">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                  >Social Media</span>
+                  <span
+                    class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium"
+                  >Viral</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 project-title">
+                  TikTok Success
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Building a community of fans through authentic content and
+                  viral moments. Join me on TikTok for behind-the-scenes looks,
+                  new music previews, and more.
+                </p>
+                <a
+                  href="https://tiktok.com/@berryblue"
+                  target="_blank"
+                  class="inline-block px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                >
+                  Follow on TikTok
+                </a>
+              </div>
+            </div>
+
+            <!-- Music Journey -->
+            <div
+              class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden"
+            >
+              <img
+                src="public/berryblue-profile.jpg"
+                alt="Berryblue portrait"
+                class="w-full h-64 object-cover"
+              >
+              <div class="p-6">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                  >Artist</span>
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
+                  >DFW</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 project-title">
+                  The Journey
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  From Dallas-Fort Worth to stages across the country, follow my
+                  journey as I create music that connects with people and tells
+                  stories that matter.
+                </p>
+                <a
+                  href="#contact"
+                  class="inline-block px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                >
+                  Learn More
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="mb-20">
-        <h2 class="text-4xl font-bold mb-6">Let's Connect</h2>
-        <p class="text-gray-600 leading-relaxed mb-8 max-w-2xl">
-          Want to collaborate, book a show, or just say hi? I'd love to hear
-          from you! Reach out through any of my social media channels or send me
-          a message.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a
-            href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
-            target="_blank"
-            class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-          >
-            Spotify
-          </a>
-          <a
-            href="https://www.instagram.com/berryblue"
-            target="_blank"
-            class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-          >
-            Instagram
-          </a>
-          <a
-            href="https://tiktok.com/@berryblue"
-            target="_blank"
-            class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-          >
-            TikTok
-          </a>
-          <a
-            href="https://www.youtube.com/@berryblue"
-            target="_blank"
-            class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-          >
-            YouTube
-          </a>
-          <a
-            href="https://music.apple.com/artist/berryblue"
-            target="_blank"
-            class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-          >
-            Apple Music
-          </a>
-          <a
-            href="https://soundcloud.com/berryblue"
-            target="_blank"
-            class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-          >
-            SoundCloud
-          </a>
-          <a
-            href="https://linktr.ee/blueswebsite"
-            target="_blank"
-            class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            All Links
-          </a>
-        </div>
-      </section>
-    </main>
+        <!-- Contact Section -->
+        <section id="contact" class="mb-20">
+          <h2 class="text-4xl font-bold mb-6 section-title">Let's Connect</h2>
+          <p class="text-gray-600 leading-relaxed mb-8 max-w-2xl">
+            Want to collaborate, book a show, or just say hi? I'd love to hear
+            from you! Reach out through any of my social media channels or send
+            me a message.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
+              target="_blank"
+              class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              Spotify
+            </a>
+            <a
+              href="https://www.instagram.com/berryblue"
+              target="_blank"
+              class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://tiktok.com/@berryblue"
+              target="_blank"
+              class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              TikTok
+            </a>
+            <a
+              href="https://www.youtube.com/@berryblue"
+              target="_blank"
+              class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              YouTube
+            </a>
+            <a
+              href="https://music.apple.com/artist/berryblue"
+              target="_blank"
+              class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              Apple Music
+            </a>
+            <a
+              href="https://soundcloud.com/berryblue"
+              target="_blank"
+              class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              SoundCloud
+            </a>
+            <a
+              href="https://linktr.ee/blueswebsite"
+              target="_blank"
+              class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              All Links
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
 
     <script src="index.js"></script>
   </body>
