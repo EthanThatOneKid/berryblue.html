@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berryblue - Pop Artist Portfolio</title>
+    <link rel="icon" href="public/keychain.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="index.css">
   </head>
-  <body class="bg-white text-gray-900">
+  <body class="bg-[#f7fbff] text-gray-900">
     <!-- Sidenav Container with Grid Layout -->
     <div id="sidenav-container">
       <!-- Mobile Menu Button -->
@@ -87,6 +88,10 @@
                 class="nav-link block text-gray-600 hover:text-gray-900"
               >Music</a>
               <a
+                href="#vinyl"
+                class="nav-link block text-gray-600 hover:text-gray-900"
+              >Vinyl</a>
+              <a
                 href="#discography"
                 class="nav-link block text-gray-600 hover:text-gray-900"
               >Discography</a>
@@ -127,7 +132,7 @@
               </svg>
             </a>
             <a
-              href="https://tiktok.com/@berryblue"
+              href="https://www.tiktok.com/@berryb1ues"
               target="_blank"
               class="text-gray-600 hover:text-gray-900"
               title="TikTok"
@@ -139,7 +144,7 @@
               </svg>
             </a>
             <a
-              href="https://www.youtube.com/@berryblue"
+              href="https://youtube.com/@berrybluesjam"
               target="_blank"
               class="text-gray-600 hover:text-gray-900"
               title="YouTube"
@@ -151,7 +156,7 @@
               </svg>
             </a>
             <a
-              href="https://music.apple.com/artist/berryblue"
+              href="https://music.apple.com/us/artist/berryblue/1633852038"
               target="_blank"
               class="text-gray-600 hover:text-gray-900"
               title="Apple Music"
@@ -253,15 +258,14 @@
               About Berryblue 🫐
             </h2>
             <p class="text-gray-600 leading-relaxed mb-4">
-              Hey! I'm Berryblue, a pop artist from Dallas-Fort Worth making
-              waves in the music scene. My sound blends dreamy pop melodies with
-              honest, emotional storytelling that connects with listeners on a
-              deep level.
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-              From TikTok viral moments to sold-out shows, I'm on a mission to
-              create music that makes you feel something real. Every song is a
-              piece of my story, and I can't wait to share it with you.
+              Berryblue (Blue) is a pop artist from Dallas, Texas who writes,
+              produces, and performs her own songs. After more than a decade at
+              the piano, she now writes, produces, and performs her own
+              music—blending dreamy melodies with candid, emotionally honest
+              storytelling. From TikTok viral moments to sold-out shows, she's
+              on a mission to create music that makes you feel something real.
+              Every song is a piece of her story, and she can't wait to share it
+              with you.
             </p>
           </div>
         </section>
@@ -269,13 +273,9 @@
         <!-- Photo Gallery -->
         <section class="mb-20">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div></div>
             <img
-              src="public/selfish.jpg"
-              alt="Berryblue Selfish artwork"
-              class="w-full h-64 object-cover rounded-lg"
-            >
-            <img
-              src="public/berryblue-artistic.jpg"
+              src="public/hand-on-hip.webp"
               alt="Berryblue artistic photo"
               class="w-full h-64 object-cover rounded-lg"
             >
@@ -284,11 +284,7 @@
               alt="Berryblue street photo"
               class="w-full h-64 object-cover rounded-lg"
             >
-            <img
-              src="public/blue-disco-ball.png"
-              alt="Blue disco ball"
-              class="w-full h-64 object-cover rounded-lg bg-gray-50"
-            >
+            <div></div>
           </div>
         </section>
 
@@ -327,13 +323,110 @@
             </div>
           </div>
 
-          <a
-            href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
-            target="_blank"
-            class="inline-block px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="https://broke.ffm.to/berryblue-uh-oh/presavecallback?context=pre_save&service=spotify&redirecturl&actionid&order=677840aea25e1ee52edee582&fpEnabled=false&user=mama%20berry&status=success&origin=presavecallback"
+              target="_blank"
+              class="inline-block px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+            >
+              Stream Debut Album "Uh Oh"
+            </a>
+            <a
+              href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
+              target="_blank"
+              class="inline-block px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              Listen on Spotify
+            </a>
+          </div>
+        </section>
+
+        <!-- Vinyl Section -->
+        <section id="vinyl" class="mb-20">
+          <h2 class="text-4xl font-bold mb-6 section-title">Vinyl Release</h2>
+          <p class="text-gray-600 leading-relaxed mb-8 max-w-2xl">
+            Experience "Uh Oh" in its purest form with this limited edition
+            vinyl pressing. Available for immediate delivery with tracks
+            spanning both sides of the record.
+          </p>
+
+          <div
+            class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-8 mb-8"
           >
-            Listen on Spotify
-          </a>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+              <div class="flex-shrink-0">
+                <img
+                  src="public/uh-oh-album.jpg"
+                  alt="Uh Oh Vinyl Album"
+                  class="w-48 h-48 rounded-lg object-cover shadow-lg"
+                >
+              </div>
+              <div class="flex-1">
+                <h3 class="text-3xl font-bold mb-4">
+                  Uh Oh - Limited Edition Vinyl
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Get your hands on the physical release of my debut album. This
+                  12" vinyl features all 12 tracks from "Uh Oh" with beautiful
+                  artwork and premium sound quality.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                  >
+                    Limited Edition
+                  </span>
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
+                  >
+                    Immediate Delivery
+                  </span>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://www.diggersfactory.com/vinyl/324500/berryblue-uh-oh"
+                    target="_blank"
+                    class="inline-block px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold text-center"
+                  >
+                    Order Vinyl - €26.99
+                  </a>
+                  <a
+                    href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
+                    target="_blank"
+                    class="inline-block px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-semibold text-center"
+                  >
+                    Preview on Spotify
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tracklist Preview -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="text-xl font-bold mb-4 text-gray-800">Side A</h4>
+              <ul class="space-y-2 text-gray-600">
+                <li>1. Inside Out</li>
+                <li>2. Uh Oh</li>
+                <li>3. Bad Girl</li>
+                <li>4. Attention</li>
+                <li>5. After Party</li>
+                <li>6. Enjoy Yourself</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold mb-4 text-gray-800">Side B</h4>
+              <ul class="space-y-2 text-gray-600">
+                <li>1. Blue</li>
+                <li>2. Bark!</li>
+                <li>3. WhatUDo2Me</li>
+                <li>4. Withdrawals</li>
+                <li>5. Tragic Fantasies</li>
+                <li>6. No Control</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <!-- Discography Section -->
@@ -417,7 +510,7 @@
               <div class="discography-item">
                 <div class="image-wrapper">
                   <img
-                    src="public/sundae.jpg"
+                    src="public/back-of-my-mind.jpg"
                     alt="back of my mind"
                     class="w-full aspect-square object-cover rounded-lg mb-2"
                   >
@@ -439,7 +532,7 @@
               <div class="discography-item">
                 <div class="image-wrapper">
                   <img
-                    src="public/uh-oh.jpg"
+                    src="public/uh-oh-album.jpg"
                     alt="Uh Oh Album"
                     class="w-full aspect-square object-cover rounded-lg mb-2"
                   >
@@ -467,7 +560,7 @@
                   >
                   <div class="play-button-overlay">
                     <a
-                      href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
+                      href="https://youtu.be/CBZITo_KG5o?si=rYQROjhg-YY-Z3Wv"
                       target="_blank"
                       class="play-button"
                     >
@@ -617,28 +710,6 @@
                   </div>
                 </div>
                 <h4 class="font-semibold text-sm">Tragic Fantasies</h4>
-                <p class="text-xs text-gray-500">Single</p>
-              </div>
-              <div class="discography-item">
-                <div class="image-wrapper">
-                  <img
-                    src="public/migraine.jpg"
-                    alt="Bless You"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
-                  >
-                  <div class="play-button-overlay">
-                    <a
-                      href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
-                      target="_blank"
-                      class="play-button"
-                    >
-                      <svg viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <h4 class="font-semibold text-sm">Bless You</h4>
                 <p class="text-xs text-gray-500">Single</p>
               </div>
               <div class="discography-item">
@@ -834,7 +905,7 @@
               <div class="discography-item">
                 <div class="image-wrapper">
                   <img
-                    src="public/keychain.png"
+                    src="public/cookie-hoe.jpg"
                     alt="COOKIE HOE"
                     class="w-full aspect-square object-cover rounded-lg mb-2"
                   >
@@ -859,193 +930,69 @@
 
         <!-- Projects Section -->
         <section id="projects" class="mb-20">
-          <h2 class="text-4xl font-bold mb-8 section-title">Latest Release</h2>
-
-          <!-- Just Friends - Featured -->
-          <div
-            class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden mb-8"
-          >
-            <img
-              src="public/just-friends.jpg"
-              alt="Just Friends single artwork"
-              class="w-full h-80 object-cover"
-            >
-            <div class="p-6">
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium"
-                >New Single</span>
-                <span
-                  class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
-                >Pop</span>
-                <span
-                  class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
-                >Emotional</span>
-              </div>
-              <h3 class="text-2xl font-bold mb-3 project-title">
-                Just Friends
-              </h3>
-              <p class="text-gray-600 mb-4">
-                My latest single (2025) based on a true story. "Just Friends"
-                explores the complicated emotions of wanting something more from
-                a relationship while being stuck in the friend zone. It's raw,
-                honest, and deeply personal.
-              </p>
-              <p class="text-gray-500 text-sm italic mb-4 quote-text">
-                "here i am... although you haven't showed me love again... wish
-                i was more to you..."
-              </p>
-              <a
-                href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
-                target="_blank"
-                class="inline-block px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-              >
-                Listen on Spotify
-              </a>
-            </div>
-          </div>
-
-          <h2 class="text-4xl font-bold mb-8 mt-16 section-title">
-            More Projects
+          <h2 class="text-4xl font-bold mb-8 mt-0 section-title">
+            Music Videos
           </h2>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Brooklyn Show -->
+            <!-- Music Video -->
             <div
               class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden"
             >
-              <img
-                src="public/brooklyn-concert.jpg"
-                alt="Brooklyn concert poster"
-                class="w-full h-64 object-cover"
-              >
-              <div class="p-6">
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
-                  >Live Show</span>
-                  <span
-                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
-                  >Brooklyn</span>
-                </div>
-                <h3 class="text-2xl font-bold mb-3 project-title">
-                  Live in Brooklyn, NY
-                </h3>
-                <p class="text-gray-600 mb-4">
-                  Performing at The Sultan Room on December 15th with special
-                  guests Nafeesisboujee and Astrus. An intimate night of music
-                  and connection.
-                </p>
-                <button
-                  class="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+              <div class="relative">
+                <img
+                  src="public/bark.jpg"
+                  alt="Bark! Music Video Thumbnail"
+                  class="w-full h-64 object-cover"
                 >
-                  Get Tickets
-                </button>
-              </div>
-            </div>
-
-            <!-- Selfish -->
-            <div
-              class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden"
-            >
-              <img
-                src="public/selfish.jpg"
-                alt="Selfish artwork"
-                class="w-full h-64 object-cover"
-              >
-              <div class="p-6">
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium"
-                  >Single</span>
-                  <span
-                    class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium"
-                  >Pop Art</span>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <a
+                    href="https://youtu.be/CBZITo_KG5o?si=rYQROjhg-YY-Z3Wv"
+                    target="_blank"
+                    class="play-button-large"
+                  >
+                    <svg viewBox="0 0 24 24" class="w-12 h-12">
+                      <path d="M8 5v14l11-7z" fill="white" />
+                    </svg>
+                  </a>
                 </div>
-                <h3 class="text-2xl font-bold mb-3 project-title">Selfish</h3>
-                <p class="text-gray-600 mb-4">
-                  A bold pop anthem with striking visual aesthetics. This track
-                  showcases my evolution as an artist and my commitment to
-                  creating memorable, impactful music.
-                </p>
-                <a
-                  href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
-                  target="_blank"
-                  class="inline-block px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-                >
-                  Stream Now
-                </a>
               </div>
-            </div>
-
-            <!-- TikTok Viral -->
-            <div
-              class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden"
-            >
-              <img
-                src="public/berryblue-artistic.jpg"
-                alt="TikTok content"
-                class="w-full h-64 object-cover"
-              >
               <div class="p-6">
                 <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
-                  >Social Media</span>
                   <span
                     class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium"
-                  >Viral</span>
-                </div>
-                <h3 class="text-2xl font-bold mb-3 project-title">
-                  TikTok Success
-                </h3>
-                <p class="text-gray-600 mb-4">
-                  Building a community of fans through authentic content and
-                  viral moments. Join me on TikTok for behind-the-scenes looks,
-                  new music previews, and more.
-                </p>
-                <a
-                  href="https://tiktok.com/@berryblue"
-                  target="_blank"
-                  class="inline-block px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-                >
-                  Follow on TikTok
-                </a>
-              </div>
-            </div>
-
-            <!-- Music Journey -->
-            <div
-              class="project-card bg-white border border-gray-200 rounded-lg overflow-hidden"
-            >
-              <img
-                src="public/berryblue-artistic.jpg"
-                alt="Berryblue portrait"
-                class="w-full h-64 object-cover"
-              >
-              <div class="p-6">
-                <div class="flex flex-wrap gap-2 mb-4">
+                  >Official Video</span>
+                  <span
+                    class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                  >Pop</span>
                   <span
                     class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
-                  >Artist</span>
-                  <span
-                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
-                  >DFW</span>
+                  >2025</span>
                 </div>
                 <h3 class="text-2xl font-bold mb-3 project-title">
-                  The Journey
+                  Bark! - Official Music Video
                 </h3>
                 <p class="text-gray-600 mb-4">
-                  From Dallas-Fort Worth to stages across the country, follow my
-                  journey as I create music that connects with people and tells
-                  stories that matter.
+                  Experience "Bark!" like never before with this official music
+                  video. Featuring vibrant visuals, creative direction, and the
+                  infectious energy that makes this track a fan favorite.
                 </p>
-                <a
-                  href="#contact"
-                  class="inline-block px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-                >
-                  Learn More
-                </a>
+                <div class="flex flex-col sm:flex-row gap-2">
+                  <a
+                    href="https://youtu.be/CBZITo_KG5o?si=rYQROjhg-YY-Z3Wv"
+                    target="_blank"
+                    class="inline-block px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-center text-sm"
+                  >
+                    Watch on YouTube
+                  </a>
+                  <a
+                    href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
+                    target="_blank"
+                    class="inline-block px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors text-center text-sm"
+                  >
+                    Stream on Spotify
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -1063,44 +1010,65 @@
             <a
               href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
               target="_blank"
-              class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+              class="px-6 py-3 bg-[#1DB954] text-white rounded-lg hover:bg-[#17a64a] transition-colors"
             >
               Spotify
             </a>
             <a
               href="https://www.instagram.com/berryblue"
               target="_blank"
-              class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+              class="px-6 py-3 bg-[#E4405F] text-white rounded-lg hover:bg-[#d73657] transition-colors"
             >
               Instagram
             </a>
             <a
-              href="https://tiktok.com/@berryblue"
+              href="https://www.tiktok.com/@berryb1ues"
               target="_blank"
               class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
             >
               TikTok
             </a>
             <a
-              href="https://www.youtube.com/@berryblue"
+              href="https://youtube.com/@berrybluesjam"
               target="_blank"
-              class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+              class="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
             >
               YouTube
             </a>
             <a
-              href="https://music.apple.com/artist/berryblue"
+              href="https://music.apple.com/us/artist/berryblue/1633852038"
               target="_blank"
-              class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+              class="px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors"
             >
               Apple Music
             </a>
             <a
-              href="https://soundcloud.com/berryblue"
+              href="https://soundcloud.com/berrybluee"
               target="_blank"
-              class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+              class="px-6 py-3 bg-[#FF5500] text-white rounded-lg hover:bg-[#e14b00] transition-colors"
             >
               SoundCloud
+            </a>
+            <a
+              href="https://www.songkick.com/artists/10347219-berryblue"
+              target="_blank"
+              class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+            >
+              Songkick
+            </a>
+            <a
+              href="https://bnds.us/gvx7ot"
+              target="_blank"
+              class="px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
+            >
+              Bandsintown
+            </a>
+            <a
+              href="https://discord.gg/W8YAmD9FMP"
+              target="_blank"
+              class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            >
+              Discord
             </a>
             <a
               href="https://linktr.ee/blueswebsite"
