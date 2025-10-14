@@ -154,12 +154,45 @@ html {
 /* Main content */
 .main-content {
   padding: 2rem;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 @media (min-width: 1024px) {
   .main-content {
     padding: 4rem;
   }
+}
+
+/* Custom responsive container class */
+.content-container {
+  max-width: min(42rem, 100%);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure proper container behavior */
+.main-content > section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Additional responsive constraints for grid layouts */
+.grid {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fix any potential overflow in discography grid */
+.discography-item {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Ensure images don't cause overflow */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Navigation links */
@@ -283,6 +316,23 @@ html {
 
 .thank-you-image {
   transition: filter 1s ease;
+  max-width: min(20rem, 100%);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive constraints for thank you section */
+@media (max-width: 640px) {
+  .thank-you-image {
+    max-width: min(16rem, 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .thank-you-image {
+    max-width: min(12rem, 100%);
+  }
 }
 
 .thank-you-image:hover {
