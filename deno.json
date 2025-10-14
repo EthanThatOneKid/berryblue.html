@@ -1,0 +1,10 @@
+{
+  "lock": false,
+  "description": "Berryblue Pop Artist Portfolio",
+  "tasks": {
+    "start": {
+      "description": "Start the project",
+      "command": "deno -A jsr:@std/http/file-server"
+    }
+  }
+}
