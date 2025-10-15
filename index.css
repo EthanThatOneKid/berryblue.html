@@ -183,7 +183,7 @@ html {
 /* Main content */
 .main-content {
   padding: 2rem;
-  max-width: 100%;
+  max-width: 80rem;
   overflow-x: hidden;
 }
 
