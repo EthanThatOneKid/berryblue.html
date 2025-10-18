@@ -5,6 +5,10 @@
     "start": {
       "description": "Start the project",
       "command": "deno -A jsr:@std/http/file-server"
+    },
+    "precommit": {
+      "description": "Run pre-commit hooks",
+      "command": "deno fmt && deno lint && deno check"
     }
   }
 }
