@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 
 html {
   scroll-behavior: smooth;
+  background: transparent;
 }
 
 /* CSS Grid Layout for Responsive Sidenav */
@@ -185,6 +186,107 @@ html {
   padding: 2rem;
   max-width: 80rem;
   overflow-x: hidden;
+  color: white;
+}
+
+/* High contrast text in main content area */
+.main-content p,
+.main-content .text-gray-600,
+.main-content .text-gray-700,
+.main-content .text-gray-500 {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.main-content .text-gray-500 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  color: white;
+}
+
+/* Ensure links in main content have good contrast */
+.main-content a:not(.play-button):not(.play-button-large) {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: underline;
+}
+
+.main-content a:hover:not(.play-button):not(.play-button-large) {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Update section titles for better visibility */
+.main-content .section-title {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Glass card effect - foggy transparent glass background */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  color: white;
+}
+
+.glass-card p,
+.glass-card .text-gray-600,
+.glass-card .text-gray-700,
+.glass-card .text-gray-500 {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.glass-card .text-gray-500 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.glass-card h3,
+.glass-card h4 {
+  color: white;
+}
+
+/* Update badge colors in glass cards for better visibility */
+.glass-card .bg-purple-100,
+.glass-card .bg-pink-100,
+.glass-card .bg-blue-100,
+.glass-card .bg-green-100 {
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-card .text-purple-700,
+.glass-card .text-pink-700,
+.glass-card .text-blue-700,
+.glass-card .text-green-700 {
+  color: white !important;
+}
+
+/* Update links in glass cards for better visibility */
+.glass-card a:not(.play-button):not(.play-button-large) {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-decoration: underline;
+}
+
+.glass-card a:hover:not(.play-button):not(.play-button-large) {
+  color: white !important;
+  text-decoration: underline;
+}
+
+.glass-card .text-purple-600 {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.glass-card .text-purple-600:hover {
+  color: white !important;
 }
 
 @media (min-width: 1024px) {
@@ -382,4 +484,61 @@ img {
   .thank-you-image:not(:hover) {
     transition: none;
   }
+}
+
+/* SVG Filter Container - Position it out of document flow */
+svg[height="0"][aria-hidden="true"] {
+  position: fixed;
+}
+
+/* Apply grainy filter to gradient elements to prevent banding */
+/* This uses displacement mapping to add subtle noise without altering gradient colors */
+.grainy-gradient {
+  filter: url(#grain);
+}
+
+/* Grainy background using SVG gradient */
+.grainy-background {
+  position: relative;
+  background: transparent;
+}
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  filter: url(#grain);
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Style circles in the background gradient with blending */
+.background-gradient ellipse,
+.background-gradient circle {
+  mix-blend-mode: screen;
+}
+
+.background-gradient circle {
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+.background-gradient circle:nth-of-type(2) {
+  transform: rotate(-60deg);
+  transform-origin: center;
+}
+
+/* Ensure content is above the background */
+#sidenav-container {
+  position: relative;
+  z-index: 1;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
 }
