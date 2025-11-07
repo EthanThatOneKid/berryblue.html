@@ -83,15 +83,21 @@ html {
 }
 
 .hamburger:is(:hover, :focus) svg > line {
-  stroke: hsl(220, 13%, 18%);
+  stroke: white;
+}
+
+.hamburger svg > line {
+  stroke: rgba(255, 255, 255, 0.9);
 }
 
 /* Sidenav Styles */
 .sidenav {
   display: grid;
   grid-template-columns: [nav] 2fr [escape] 1fr;
-  background: white;
-  border-right: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0 2rem 2rem 2rem;
   overflow-y: auto;
   position: sticky;
@@ -100,6 +106,7 @@ html {
   z-index: 40;
   --duration: 0.6s;
   --easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
+  color: white;
 }
 
 /* Accessible motion */
@@ -329,10 +336,32 @@ img {
 /* Navigation links */
 .nav-link {
   transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .nav-link:hover {
   transform: translateX(4px);
+  color: white;
+}
+
+/* Update text colors in sidenav for glass effect */
+.sidenav .text-gray-600,
+.sidenav .text-gray-700,
+.sidenav .text-gray-900 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.sidenav h1,
+.sidenav .brand-name {
+  color: white;
+}
+
+.sidenav svg {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sidenav a:hover svg {
+  color: white;
 }
 
 /* Project cards */
