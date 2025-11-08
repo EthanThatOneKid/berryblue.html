@@ -1210,15 +1210,19 @@ hr {
    ========================================================================== */
 
 .show-details-card {
-  background-color: var(--color-white);
-  border-radius: var(--radius-lg);
   padding: var(--spacing-6);
-  box-shadow: var(--shadow-md);
   margin-bottom: var(--spacing-4);
 }
 
-.show-details-card h4 {
-  color: var(--color-gray-900) !important;
+.show-details-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.show-details-card li {
+  margin: 0;
+  padding: 0;
 }
 
 /* .latest-release-card, .vinyl-card, .project-card inherit from .glass-card */
