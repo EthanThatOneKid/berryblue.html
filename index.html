@@ -268,8 +268,9 @@
     </script>
     <link rel="stylesheet" href="index.css">
 
-    <!-- SVG Filter for Grainy Gradients - Variation 2 -->
+    <!-- SVG Filter for Grainy Gradients - Optimized for Performance -->
     <svg width="0" height="0" aria-hidden="true">
+      <!-- Desktop version: Full grain effect -->
       <filter
         id="grain"
         color-interpolation-filters="sRGB"
@@ -277,12 +278,30 @@
       >
         <feTurbulence
           type="fractalNoise"
-          baseFrequency=".8"
-          numOctaves="4"
+          baseFrequency=".5"
+          numOctaves="3"
         />
         <feDisplacementMap
           in="SourceGraphic"
           scale=".15"
+          xChannelSelector="R"
+        />
+        <feBlend in2="SourceGraphic" />
+      </filter>
+      <!-- Mobile version: Reduced grain for better performance -->
+      <filter
+        id="grain-mobile"
+        color-interpolation-filters="sRGB"
+        primitiveUnits="objectBoundingBox"
+      >
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency=".3"
+          numOctaves="2"
+        />
+        <feDisplacementMap
+          in="SourceGraphic"
+          scale=".1"
           xChannelSelector="R"
         />
         <feBlend in2="SourceGraphic" />

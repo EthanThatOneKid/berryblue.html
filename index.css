@@ -1536,6 +1536,22 @@ hr {
   will-change: transform;
 }
 
+/* Optimize grain effect for mobile devices */
+@media (max-width: 768px) {
+  .background-gradient {
+    /* Use lighter grain filter on mobile for better performance */
+    filter: url(#grain-mobile);
+  }
+}
+
+/* Disable grain entirely on very small/low-power devices */
+@media (max-width: 480px) {
+  .background-gradient {
+    /* Remove filter on small screens to prevent lag */
+    filter: none;
+  }
+}
+
 .background-gradient ellipse,
 .background-gradient circle {
   mix-blend-mode: screen;
@@ -1553,6 +1569,19 @@ hr {
 
 .grainy-gradient {
   filter: url(#grain);
+}
+
+/* Optimize grainy-gradient for mobile */
+@media (max-width: 768px) {
+  .grainy-gradient {
+    filter: url(#grain-mobile);
+  }
+}
+
+@media (max-width: 480px) {
+  .grainy-gradient {
+    filter: none;
+  }
 }
 
 svg[height="0"][aria-hidden="true"] {
