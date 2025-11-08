@@ -1146,7 +1146,6 @@ hr {
    ========================================================================== */
 
 .about-section,
-.photo-gallery,
 .music-section,
 .shows-section,
 .vinyl-section,
@@ -1205,18 +1204,6 @@ hr {
 @media (min-width: 1024px) {
   .discography-grid {
     grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-}
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: var(--spacing-4);
-}
-
-@media (min-width: 768px) {
-  .photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
