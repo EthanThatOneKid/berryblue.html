@@ -266,7 +266,6 @@
         ]
       }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="index.css">
 
     <!-- SVG Filter for Grainy Gradients - Variation 2 -->
@@ -442,7 +441,7 @@
             </div>
           </div>
 
-          <div class="flex flex-wrap gap-4">
+          <div class="social-links">
             <a
               href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
               target="_blank"
@@ -583,7 +582,7 @@
       <!-- Main Content -->
       <main class="main-content" role="main">
         <!-- About Section -->
-        <section id="about" class="mb-20 animate">
+        <section id="about" class="about-section animate">
           <div class="content-container">
             <img
               src="public/migraine.jpg"
@@ -596,7 +595,7 @@
             <p
               class="text-gray-600 leading-relaxed mb-4 text-with-contrast animate delay-3"
             >
-              Berryblue (Blue) is a pop artist from Dallas, Texas who writes,
+              Berryblue (Blue) is a pop artist based in SoCal who writes,
               produces, and performs her own songs. After more than a decade at
               the piano, she now writes, produces, and performs her own
               music—blending dreamy melodies with candid, emotionally honest
@@ -609,17 +608,17 @@
         </section>
 
         <!-- Photo Gallery -->
-        <section class="mb-20">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <section class="photo-gallery">
+          <div class="photo-grid">
             <div></div>
-            <img
-              src="public/hand-on-hip.webp"
-              alt="Berryblue artistic photo"
-              class="w-full object-cover rounded-lg"
-            >
             <img
               src="public/berry-sit.png"
               alt="Berryblue street photo"
+              class="w-full object-cover rounded-lg"
+            >
+            <img
+              src="public/hand-on-hip.webp"
+              alt="Berryblue artistic photo"
               class="w-full object-cover rounded-lg"
             >
             <div></div>
@@ -627,7 +626,7 @@
         </section>
 
         <!-- Music Section -->
-        <section id="music" class="mb-20">
+        <section id="music" class="music-section">
           <h2 class="text-4xl font-bold mb-6 section-title">Music</h2>
           <p
             class="text-gray-600 leading-relaxed mb-8 content-container text-with-contrast"
@@ -644,7 +643,7 @@
 
         <section id="latest-release" class="mb-20">
           <div
-            class="glass-card rounded-lg p-6 mb-8"
+            class="glass-card latest-release-card p-6 mb-8"
           >
             <h3 class="text-2xl font-bold mb-3">Latest Release</h3>
             <div class="flex flex-col md:flex-row gap-4">
@@ -671,29 +670,29 @@
         </section>
 
         <!-- Upcoming Shows Section -->
-        <section id="shows" class="mb-20">
+        <section id="shows" class="shows-section">
           <h2 class="text-4xl font-bold mb-6 section-title">
             Party with me
           </h2>
 
           <div
-            class="glass-card rounded-lg p-8 mb-8"
+            class="glass-card p-8 mb-8"
           >
             <div class="flex flex-col md:flex-row gap-6">
               <div class="flex-1">
                 <div class="flex flex-wrap gap-2 mb-4">
                   <span
-                    class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                    class="badge badge-purple"
                   >
                     Upcoming Show
                   </span>
                   <span
-                    class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium"
+                    class="badge badge-pink"
                   >
                     December 21, 2025
                   </span>
                   <span
-                    class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                    class="badge badge-blue"
                   >
                     21+
                   </span>
@@ -733,49 +732,49 @@
                   <a
                     href="https://www.tixr.com/groups/nectarlounge/events/lil-hero-s-birthday-bash-live--163661"
                     target="_blank"
-                    class="inline-block px-6 py-3 bg-[#E4405F] text-white rounded-lg hover:bg-[#d73657] transition-colors font-semibold text-center"
+                    class="ticket-button"
                   >
                     Get Tickets
                   </a>
                 </div>
               </div>
               <div class="flex-shrink-0">
-                <div class="bg-white rounded-lg p-6 shadow-md mb-4">
-                  <h4 class="text-xl font-bold mb-4 !text-gray-900">
+                <div class="show-details-card">
+                  <h4 class="text-xl font-bold mb-4 text-gray-900">
                     Show Details
                   </h4>
-                  <ul class="space-y-3 !text-gray-900">
+                  <ul class="space-y-3 text-gray-900">
                     <li class="flex items-start">
-                      <span class="font-semibold mr-2 !text-gray-900"
+                      <span class="font-semibold mr-2 text-gray-900"
                       >Date:</span>
-                      <span class="!text-gray-800">December 21, 2025</span>
+                      <span class="text-gray-800">December 21, 2025</span>
                     </li>
                     <li class="flex items-start">
-                      <span class="font-semibold mr-2 !text-gray-900"
+                      <span class="font-semibold mr-2 text-gray-900"
                       >Venue:</span>
-                      <span class="!text-gray-800">Nectar Lounge</span>
+                      <span class="text-gray-800">Nectar Lounge</span>
                     </li>
                     <li class="flex items-start">
-                      <span class="font-semibold mr-2 !text-gray-900"
+                      <span class="font-semibold mr-2 text-gray-900"
                       >Location:</span>
-                      <span class="!text-gray-800">Seattle, WA</span>
+                      <span class="text-gray-800">Seattle, WA</span>
                     </li>
                     <li class="flex items-start">
-                      <span class="font-semibold mr-2 !text-gray-900">Age:</span>
-                      <span class="!text-gray-800">21+</span>
+                      <span class="font-semibold mr-2 text-gray-900">Age:</span>
+                      <span class="text-gray-800">21+</span>
                     </li>
                     <li class="flex items-start">
-                      <span class="font-semibold mr-2 !text-gray-900"
+                      <span class="font-semibold mr-2 text-gray-900"
                       >Role:</span>
-                      <span class="!text-gray-800">Opening Act</span>
+                      <span class="text-gray-800">Opening Act</span>
                     </li>
                     <li class="flex items-start">
-                      <span class="font-semibold mr-2 !text-gray-900"
+                      <span class="font-semibold mr-2 text-gray-900"
                       >Headliner:</span>
-                      <span class="!text-gray-800"><a
+                      <span class="text-gray-800"><a
                           href="https://www.instagram.com/lilmfhero"
                           target="_blank"
-                          class="!text-purple-600 hover:!text-purple-700 underline"
+                          class="text-purple-600 hover:text-purple-700 underline"
                         >Lil Hero</a></span>
                     </li>
                   </ul>
@@ -786,7 +785,7 @@
         </section>
 
         <!-- Vinyl Section -->
-        <section id="vinyl" class="mb-20">
+        <section id="vinyl" class="vinyl-section">
           <h2 class="text-4xl font-bold mb-6 section-title">
             Vinyl Release
           </h2>
@@ -797,7 +796,7 @@
           </p>
 
           <div
-            class="glass-card rounded-lg p-8 mb-8"
+            class="glass-card vinyl-card p-8 mb-8"
           >
             <div class="flex flex-col md:flex-row gap-8">
               <a
@@ -821,12 +820,12 @@
                 </p>
                 <div class="flex flex-wrap gap-2 mb-6">
                   <span
-                    class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                    class="badge badge-purple"
                   >
                     Sold out!
                   </span>
                   <span
-                    class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
+                    class="badge badge-green"
                   >
                     Immediate Delivery
                   </span>
@@ -835,7 +834,7 @@
                   <a
                     href="https://open.spotify.com/album/5FU0aeiIlfKWaFV0vL6JDp"
                     target="_blank"
-                    class="inline-block px-8 py-3 bg-[#1DB954] text-white rounded-lg hover:bg-[#17a64a] transition-colors font-semibold text-center"
+                    class="cta-button social-button-spotify"
                   >
                     Preview on Spotify
                   </a>
@@ -872,7 +871,7 @@
         </section>
 
         <!-- Discography Section -->
-        <section id="discography" class="mb-20">
+        <section id="discography" class="discography-section">
           <h2 class="text-4xl font-bold mb-8 section-title">
             Discography
           </h2>
@@ -884,13 +883,13 @@
           <!-- 2025 Releases -->
           <div class="mb-12">
             <h3 class="text-2xl font-bold mb-6 text-gray-800">2025</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="discography-grid">
               <div class="discography-item">
                 <div class="image-wrapper">
                   <img
                     src="public/just-friends.jpg"
                     alt="Just Friends"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -912,7 +911,7 @@
                   <img
                     src="public/show-u-off.jpg"
                     alt="Show U Off!"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -934,7 +933,7 @@
                   <img
                     src="public/enjoy-yourself-remix.jpg"
                     alt="Enjoy Yourself (very cool tutorials Remix)"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -956,7 +955,7 @@
                   <img
                     src="public/back-of-my-mind.jpg"
                     alt="back of my mind"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -978,7 +977,7 @@
                   <img
                     src="public/uh-oh-album.jpg"
                     alt="Uh Oh Album"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1000,7 +999,7 @@
                   <img
                     src="public/bark.jpg"
                     alt="Bark!"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1023,13 +1022,13 @@
           <!-- 2024 Releases -->
           <div class="mb-12">
             <h3 class="text-2xl font-bold mb-6 text-gray-800">2024</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="discography-grid">
               <div class="discography-item">
                 <div class="image-wrapper">
                   <img
                     src="public/so-dangerous.jpg"
                     alt="So Dangerous Single"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1051,7 +1050,7 @@
                   <img
                     src="public/attention.jpg"
                     alt="Attention"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1073,7 +1072,7 @@
                   <img
                     src="public/stupid-baby.jpg"
                     alt="Stupid Baby"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1095,7 +1094,7 @@
                   <img
                     src="public/summer-breeze.jpg"
                     alt="Summer Breeze"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1117,7 +1116,7 @@
                   <img
                     src="public/in-or-out.jpg"
                     alt="In or Out"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1139,7 +1138,7 @@
                   <img
                     src="public/tragic-fantasies.jpg"
                     alt="Tragic Fantasies"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1161,7 +1160,7 @@
                   <img
                     src="public/supersonic.jpg"
                     alt="SUPERSONIC"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1184,13 +1183,13 @@
           <!-- 2023 Releases -->
           <div class="mb-12">
             <h3 class="text-2xl font-bold mb-6 text-gray-800">2023</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="discography-grid">
               <div class="discography-item">
                 <div class="image-wrapper">
                   <img
                     src="public/passing-time.jpg"
                     alt="Passing Time"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1212,7 +1211,7 @@
                   <img
                     src="public/boogeyman.jpg"
                     alt="Boogeyman"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1234,7 +1233,7 @@
                   <img
                     src="public/enjoy-yourself.jpg"
                     alt="Enjoy Yourself"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1256,7 +1255,7 @@
                   <img
                     src="public/selfish.jpg"
                     alt="Selfish"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1278,7 +1277,7 @@
                   <img
                     src="public/got-me-like.jpg"
                     alt="GOT ME LIKE EP"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1301,13 +1300,13 @@
           <!-- 2022 Releases -->
           <div class="mb-12">
             <h3 class="text-2xl font-bold mb-6 text-gray-800">2022</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="discography-grid">
               <div class="discography-item">
                 <div class="image-wrapper">
                   <img
                     src="public/poison.jpg"
                     alt="POISON"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1329,7 +1328,7 @@
                   <img
                     src="public/virus.jpg"
                     alt="VIRUS"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1351,7 +1350,7 @@
                   <img
                     src="public/cookie-hoe.jpg"
                     alt="COOKIE HOE"
-                    class="w-full aspect-square object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg mb-2"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1373,7 +1372,7 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="mb-20">
+        <section id="projects" class="projects-section">
           <h2
             class="text-4xl font-bold mb-8 mt-0 section-title"
           >
@@ -1383,7 +1382,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Music Video -->
             <div
-              class="project-card glass-card rounded-lg overflow-hidden"
+              class="project-card glass-card overflow-hidden"
             >
               <div class="relative">
                 <img
@@ -1406,13 +1405,13 @@
               <div class="p-6">
                 <div class="flex flex-wrap gap-2 mb-4">
                   <span
-                    class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium"
+                    class="badge badge-pink"
                   >Official Video</span>
                   <span
-                    class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                    class="badge badge-purple"
                   >Pop</span>
                   <span
-                    class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                    class="badge badge-blue"
                   >2025</span>
                 </div>
                 <h3 class="text-2xl font-bold mb-3 project-title">
@@ -1427,14 +1426,14 @@
                   <a
                     href="https://youtu.be/CBZITo_KG5o?si=rYQROjhg-YY-Z3Wv"
                     target="_blank"
-                    class="inline-block px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-center text-sm"
+                    class="cta-button cta-button-sm social-button-youtube"
                   >
                     Watch on YouTube
                   </a>
                   <a
                     href="https://open.spotify.com/album/1ME8YUBYdrGWm8GXWv9riD"
                     target="_blank"
-                    class="inline-block px-4 py-2 bg-[#1DB954] text-white rounded-lg hover:bg-[#17a64a] transition-colors text-center text-sm"
+                    class="cta-button cta-button-sm social-button-spotify"
                   >
                     Stream on Spotify
                   </a>
@@ -1445,7 +1444,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="mb-20">
+        <section id="contact" class="contact-section">
           <h2 class="text-4xl font-bold mb-6 section-title">
             Let's Connect
           </h2>
@@ -1454,74 +1453,74 @@
             from you! Reach out through any of my social media channels or send
             me a message.
           </p>
-          <div class="flex flex-wrap gap-4">
+          <div class="social-links">
             <a
               href="https://open.spotify.com/artist/7LwsFYi5ugJCKFsXmMVyua"
               target="_blank"
-              class="px-6 py-3 bg-[#1DB954] text-white rounded-lg hover:bg-[#17a64a] transition-colors"
+              class="social-link social-button-spotify"
             >
               Spotify
             </a>
             <a
               href="https://www.instagram.com/berryb1ues"
               target="_blank"
-              class="px-6 py-3 bg-[#E4405F] text-white rounded-lg hover:bg-[#d73657] transition-colors"
+              class="social-link social-button-instagram"
             >
               Instagram
             </a>
             <a
               href="https://www.tiktok.com/@berryb1ues"
               target="_blank"
-              class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+              class="social-link social-button-tiktok"
             >
               TikTok
             </a>
             <a
               href="https://youtube.com/@berrybluesjam"
               target="_blank"
-              class="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+              class="social-link social-button-youtube"
             >
               YouTube
             </a>
             <a
               href="https://music.apple.com/us/artist/berryblue/1633852038"
               target="_blank"
-              class="px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors"
+              class="social-link social-button-apple"
             >
               Apple Music
             </a>
             <a
               href="https://soundcloud.com/berrybluee"
               target="_blank"
-              class="px-6 py-3 bg-[#FF5500] text-white rounded-lg hover:bg-[#e14b00] transition-colors"
+              class="social-link social-button-soundcloud"
             >
               SoundCloud
             </a>
             <a
               href="https://www.songkick.com/artists/10347219-berryblue"
               target="_blank"
-              class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+              class="social-link social-button-songkick"
             >
               Songkick
             </a>
             <a
               href="https://bnds.us/gvx7ot"
               target="_blank"
-              class="px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
+              class="social-link social-button-bandsintown"
             >
               Bandsintown
             </a>
             <a
               href="https://discord.gg/W8YAmD9FMP"
               target="_blank"
-              class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+              class="social-link social-button-discord"
             >
               Discord
             </a>
             <a
               href="https://linktr.ee/blueswebsite"
               target="_blank"
-              class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              class="social-link social-button-linktree"
             >
               Linktree
             </a>

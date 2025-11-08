@@ -1,13 +1,171 @@
+/* ==========================================================================
+   Berryblue Website
+   ========================================================================== */
+
+/* ==========================================================================
+   1. IMPORTS & FONTS
+   ========================================================================== */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
 
+/* ==========================================================================
+   2. DESIGN TOKENS (CSS CUSTOM PROPERTIES)
+   ========================================================================== */
+
+:root {
+  /* Colors - Grays */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* Colors - Purples */
+  --color-purple-100: #f3e8ff;
+  --color-purple-600: #9333ea;
+  --color-purple-700: #7e22ce;
+
+  /* Colors - Pinks */
+  --color-pink-100: #fce7f3;
+  --color-pink-600: #db2777;
+  --color-pink-700: #be185d;
+
+  /* Colors - Blues */
+  --color-blue-100: #dbeafe;
+  --color-blue-300: #93c5fd;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+
+  /* Colors - Greens */
+  --color-green-100: #dcfce7;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+
+  /* Colors - Reds */
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+
+  /* Colors - Oranges */
+  --color-orange-600: #ea580c;
+
+  /* Colors - Indigo */
+  --color-indigo-600: #4f46e5;
+  --color-indigo-700: #4338ca;
+
+  /* Brand Colors */
+  --color-spotify: #1db954;
+  --color-spotify-hover: #1ed760;
+  --color-instagram: #e4405f;
+  --color-instagram-hover: #d73657;
+  --color-soundcloud: #ff5500;
+  --color-soundcloud-hover: #e14b00;
+
+  /* Spacing Scale (in rem) */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 0.75rem; /* 12px */
+  --spacing-4: 1rem; /* 16px */
+  --spacing-6: 1.5rem; /* 24px */
+  --spacing-8: 2rem; /* 32px */
+  --spacing-12: 3rem; /* 48px */
+  --spacing-16: 4rem; /* 64px */
+  --spacing-20: 5rem; /* 80px */
+
+  /* Typography Scale */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-mobile: 540px;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Z-index Scale */
+  --z-base: 1;
+  --z-dropdown: 10;
+  --z-sticky: 40;
+  --z-fixed: 50;
+  --z-modal: 60;
+}
+
+/* ==========================================================================
+   3. CSS RESET & BASE STYLES
+   ========================================================================== */
+
 * {
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+  background: transparent;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   4. TYPOGRAPHY SYSTEM
+   ========================================================================== */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Instrument Serif", serif;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
+  margin: 0;
 }
 
 /* Special text elements */
@@ -20,39 +178,508 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Instrument Serif", serif;
 }
 
-html {
-  scroll-behavior: smooth;
-  background: transparent;
+/* Typography Utility Classes */
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+.text-base {
+  font-size: var(--font-size-base);
+}
+.text-lg {
+  font-size: var(--font-size-lg);
+}
+.text-xl {
+  font-size: var(--font-size-xl);
+}
+.text-2xl {
+  font-size: var(--font-size-2xl);
+}
+.text-3xl {
+  font-size: var(--font-size-3xl);
+}
+.text-4xl {
+  font-size: var(--font-size-4xl);
 }
 
-body {
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.leading-tight {
+  line-height: var(--line-height-tight);
+}
+.leading-normal {
+  line-height: var(--line-height-normal);
+}
+.leading-relaxed {
+  line-height: var(--line-height-relaxed);
+}
+
+/* ==========================================================================
+   5. COLOR SYSTEM
+   ========================================================================== */
+
+.text-white {
+  color: var(--color-white);
+}
+.text-gray-600 {
+  color: var(--color-gray-600);
+}
+.text-gray-700 {
+  color: var(--color-gray-700);
+}
+.text-gray-800 {
+  color: var(--color-gray-800);
+}
+.text-gray-900 {
+  color: var(--color-gray-900);
+}
+.text-purple-600 {
+  color: var(--color-purple-600);
+}
+.text-purple-700 {
+  color: var(--color-purple-700);
+}
+.text-pink-700 {
+  color: var(--color-pink-700);
+}
+.text-blue-700 {
+  color: var(--color-blue-700);
+}
+.text-green-700 {
+  color: var(--color-green-700);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+.bg-black {
+  background-color: #000000;
+}
+.bg-purple-100 {
+  background-color: var(--color-purple-100);
+}
+.bg-pink-100 {
+  background-color: var(--color-pink-100);
+}
+.bg-blue-100 {
+  background-color: var(--color-blue-100);
+}
+.bg-green-100 {
+  background-color: var(--color-green-100);
+}
+.bg-red-600 {
+  background-color: var(--color-red-600);
+}
+.bg-pink-600 {
+  background-color: var(--color-pink-600);
+}
+.bg-green-600 {
+  background-color: var(--color-green-600);
+}
+.bg-orange-600 {
+  background-color: var(--color-orange-600);
+}
+.bg-indigo-600 {
+  background-color: var(--color-indigo-600);
+}
+.bg-blue-600 {
+  background-color: var(--color-blue-600);
+}
+
+/* ==========================================================================
+   6. SPACING SYSTEM
+   ========================================================================== */
+
+/* Margins */
+.mb-2 {
+  margin-bottom: var(--spacing-2);
+}
+.mb-3 {
+  margin-bottom: var(--spacing-3);
+}
+.mb-4 {
+  margin-bottom: var(--spacing-4);
+}
+.mb-6 {
+  margin-bottom: var(--spacing-6);
+}
+.mb-8 {
+  margin-bottom: var(--spacing-8);
+}
+.mb-12 {
+  margin-bottom: var(--spacing-12);
+}
+.mb-20 {
+  margin-bottom: var(--spacing-20);
+}
+.mt-0 {
+  margin-top: 0;
+}
+.mr-2 {
+  margin-right: var(--spacing-2);
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Padding */
+.p-6 {
+  padding: var(--spacing-6);
+}
+.p-8 {
+  padding: var(--spacing-8);
+}
+.px-3 {
+  padding-left: var(--spacing-3);
+  padding-right: var(--spacing-3);
+}
+.px-4 {
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+}
+.px-6 {
+  padding-left: var(--spacing-6);
+  padding-right: var(--spacing-6);
+}
+.px-8 {
+  padding-left: var(--spacing-8);
+  padding-right: var(--spacing-8);
+}
+.py-1 {
+  padding-top: var(--spacing-1);
+  padding-bottom: var(--spacing-1);
+}
+.py-2 {
+  padding-top: var(--spacing-2);
+  padding-bottom: var(--spacing-2);
+}
+.py-3 {
+  padding-top: var(--spacing-3);
+  padding-bottom: var(--spacing-3);
+}
+
+/* ==========================================================================
+   7. LAYOUT SYSTEM
+   ========================================================================== */
+
+/* Display */
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+
+/* Flexbox */
+.flex-col {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-1 {
+  flex: 1 1 0%;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+.items-center {
+  align-items: center;
+}
+.items-start {
+  align-items: flex-start;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+/* Grid */
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+/* Gaps */
+.gap-2 {
+  gap: var(--spacing-2);
+}
+.gap-4 {
+  gap: var(--spacing-4);
+}
+.gap-6 {
+  gap: var(--spacing-6);
+}
+.gap-8 {
+  gap: var(--spacing-8);
+}
+
+/* Spacing utilities */
+.space-y-2 > * + * {
+  margin-top: var(--spacing-2);
+}
+.space-y-3 > * + * {
+  margin-top: var(--spacing-3);
+}
+.space-y-4 > * + * {
+  margin-top: var(--spacing-4);
+}
+
+/* ==========================================================================
+   8. SIZING SYSTEM
+   ========================================================================== */
+
+.w-full {
+  width: 100%;
+}
+.w-6 {
+  width: 1.5rem;
+}
+.w-12 {
+  width: 3rem;
+}
+.w-16 {
+  width: 4rem;
+}
+.w-32 {
+  width: 8rem;
+}
+.w-48 {
+  width: 12rem;
+}
+.h-6 {
+  height: 1.5rem;
+}
+.h-12 {
+  height: 3rem;
+}
+.h-16 {
+  height: 4rem;
+}
+.h-64 {
+  height: 16rem;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.max-w-80rem {
+  max-width: 80rem;
+}
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* ==========================================================================
+   9. POSITIONING
+   ========================================================================== */
+
+.relative {
   position: relative;
 }
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+.sticky {
+  position: sticky;
+}
 
-/* CSS Grid Layout for Responsive Sidenav */
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* ==========================================================================
+   10. BORDERS & RADIUS
+   ========================================================================== */
+
+.rounded {
+  border-radius: var(--radius-md);
+}
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+.rounded-full {
+  border-radius: var(--radius-full);
+}
+
+.border {
+  border-width: 1px;
+}
+.border-blue-300 {
+  border-color: var(--color-blue-300);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-blue-300);
+  margin: 0;
+}
+
+/* ==========================================================================
+   11. OBJECT FIT
+   ========================================================================== */
+
+.object-contain {
+  object-fit: contain;
+}
+.object-cover {
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   12. TEXT UTILITIES
+   ========================================================================== */
+
+.text-center {
+  text-align: center;
+}
+.underline {
+  text-decoration: underline;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ==========================================================================
+   13. RESPONSIVE UTILITIES
+   ========================================================================== */
+
+@media (min-width: 640px) {
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:flex-row {
+    flex-direction: row;
+  }
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================================================
+   14. LAYOUT COMPONENTS
+   ========================================================================== */
+
+/* Sidenav Container */
 #sidenav-container {
   display: grid;
   grid: [stack] 1fr / min-content [stack] 1fr;
   min-height: 100vh;
   gap: 0;
+  position: relative;
+  z-index: var(--z-base);
 }
 
-/* Mobile responsive stacking */
 @media (max-width: 540px) {
   #sidenav-container > * {
     grid-area: stack;
   }
 }
 
+/* Main Content */
+.main-content {
+  padding: var(--spacing-8);
+  max-width: 80rem;
+  overflow-x: hidden;
+  overflow-y: visible;
+  color: var(--color-white);
+  position: relative;
+  z-index: var(--z-base);
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    padding: 4rem;
+  }
+}
+
+.content-container {
+  max-width: min(42rem, 100%);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-content > section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.grid {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   15. NAVIGATION COMPONENTS
+   ========================================================================== */
+
 /* Hamburger Button */
 .hamburger {
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 60;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  bottom: var(--spacing-4);
+  right: var(--spacing-4);
+  z-index: var(--z-modal);
+  padding: var(--spacing-2);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   display: none;
   outline: 2px solid rgba(255, 255, 255, 0.3);
 }
@@ -66,7 +693,7 @@ body {
   height: 100%;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(16px);
-  border-radius: 0.5rem;
+  border-radius: var(--radius-md);
   pointer-events: none;
 }
 
@@ -75,7 +702,6 @@ body {
     display: block;
   }
 
-  /* Hide hamburger when sidebar is open */
   .hamburger.hidden {
     display: none;
   }
@@ -87,14 +713,14 @@ body {
 }
 
 .hamburger:is(:hover, :focus) svg > line {
-  stroke: white;
+  stroke: var(--color-white);
 }
 
 .hamburger svg > line {
   stroke: rgba(255, 255, 255, 0.9);
 }
 
-/* Sidenav Styles */
+/* Sidenav */
 .sidenav {
   display: grid;
   grid-template-columns: [nav] 2fr [escape] 1fr;
@@ -102,25 +728,23 @@ body {
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0 2rem 2rem 2rem;
+  padding: 0 var(--spacing-8) var(--spacing-8) var(--spacing-8);
   overflow-y: auto;
   position: sticky;
   top: 0;
   height: 100vh;
-  z-index: 40;
+  z-index: var(--z-sticky);
   --duration: 0.6s;
   --easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
-  color: white;
+  color: var(--color-white);
 }
 
-/* Accessible motion */
 @media (prefers-reduced-motion: reduce) {
   .sidenav {
     --duration: 1ms;
   }
 }
 
-/* Mobile positioning and transforms */
 @media (max-width: 540px) {
   .sidenav {
     position: fixed;
@@ -128,7 +752,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 50;
+    z-index: var(--z-fixed);
     visibility: hidden;
     transform: translateX(-100%);
     will-change: transform;
@@ -138,7 +762,6 @@ body {
   }
 }
 
-/* Target state for mobile */
 @media (max-width: 540px) {
   .sidenav:target {
     visibility: visible;
@@ -151,7 +774,7 @@ body {
   }
 }
 
-/* Navigation content */
+/* Navigation Content */
 .nav {
   grid-area: nav;
   display: flex;
@@ -165,12 +788,11 @@ body {
   top: 0;
 }
 
-/* Close button */
 #sidenav-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.5rem;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  padding: var(--spacing-2);
   display: none;
 }
 
@@ -180,7 +802,6 @@ body {
   }
 }
 
-/* Escape backdrop */
 .escape {
   grid-area: escape;
   display: none;
@@ -192,18 +813,43 @@ body {
   }
 }
 
-/* Main content */
-.main-content {
-  padding: 2rem;
-  max-width: 80rem;
-  overflow-x: hidden;
-  overflow-y: visible;
-  color: white;
-  /* Prevent horizontal scrollbar from animations */
-  position: relative;
+.nav-link {
+  transition: all var(--transition-base);
+  color: rgba(255, 255, 255, 0.9);
+  display: block;
+  text-decoration: none;
 }
 
-/* High contrast text in main content area */
+.nav-link:hover {
+  transform: translateX(4px);
+  color: var(--color-white);
+}
+
+/* Sidenav text colors */
+.sidenav .text-gray-600,
+.sidenav .text-gray-700,
+.sidenav .text-gray-900 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.sidenav h1,
+.sidenav .brand-name {
+  color: var(--color-white);
+}
+
+.sidenav svg {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sidenav a:hover svg {
+  color: var(--color-white);
+}
+
+/* ==========================================================================
+   16. MAIN CONTENT STYLES
+   ========================================================================== */
+
+/* High contrast text in main content */
 .main-content p,
 .main-content .text-gray-600,
 .main-content .text-gray-700,
@@ -221,34 +867,36 @@ body {
 .main-content h4,
 .main-content h5,
 .main-content h6 {
-  color: white;
+  color: var(--color-white);
 }
 
-/* Ensure links in main content have good contrast */
 .main-content a:not(.play-button):not(.play-button-large) {
   color: rgba(255, 255, 255, 0.95);
   text-decoration: underline;
 }
 
 .main-content a:hover:not(.play-button):not(.play-button-large) {
-  color: white;
+  color: var(--color-white);
   text-decoration: underline;
 }
 
-/* Update section titles for better visibility */
 .main-content .section-title {
-  color: white;
+  color: var(--color-white);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Glass card effect - foggy transparent glass background */
+/* ==========================================================================
+   17. GLASS CARD COMPONENT
+   ========================================================================== */
+
 .glass-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  color: white;
+  box-shadow: var(--shadow-glass);
+  color: var(--color-white);
+  border-radius: var(--radius-lg);
 }
 
 .glass-card p,
@@ -264,10 +912,10 @@ body {
 
 .glass-card h3,
 .glass-card h4 {
-  color: white;
+  color: var(--color-white);
 }
 
-/* Update badge colors in glass cards for better visibility */
+/* Badge colors in glass cards */
 .glass-card .bg-purple-100,
 .glass-card .bg-pink-100,
 .glass-card .bg-blue-100,
@@ -281,17 +929,16 @@ body {
 .glass-card .text-pink-700,
 .glass-card .text-blue-700,
 .glass-card .text-green-700 {
-  color: white !important;
+  color: var(--color-white) !important;
 }
 
-/* Update links in glass cards for better visibility */
 .glass-card a:not(.play-button):not(.play-button-large) {
   color: rgba(255, 255, 255, 0.95) !important;
   text-decoration: underline;
 }
 
 .glass-card a:hover:not(.play-button):not(.play-button-large) {
-  color: white !important;
+  color: var(--color-white) !important;
   text-decoration: underline;
 }
 
@@ -300,112 +947,324 @@ body {
 }
 
 .glass-card .text-purple-600:hover {
-  color: white !important;
+  color: var(--color-white) !important;
 }
 
-@media (min-width: 1024px) {
-  .main-content {
-    padding: 4rem;
-  }
+/* White cards inside glass cards should use dark text */
+.glass-card .bg-white {
+  color: var(--color-gray-800);
 }
 
-/* Custom responsive container class */
-.content-container {
-  max-width: min(42rem, 100%);
-  width: 100%;
-  box-sizing: border-box;
+.glass-card .bg-white * {
+  color: inherit;
 }
 
-/* Ensure proper container behavior */
-.main-content > section {
-  max-width: 100%;
-  overflow-x: hidden;
+.glass-card .bg-white .text-gray-800,
+.glass-card .bg-white .text-gray-900 {
+  color: var(--color-gray-800) !important;
 }
 
-/* Additional responsive constraints for grid layouts */
-.grid {
-  max-width: 100%;
-  overflow-x: hidden;
+.glass-card .bg-white .text-gray-700 {
+  color: var(--color-gray-700) !important;
 }
 
-/* Fix any potential overflow in discography grid */
-.discography-item {
-  max-width: 100%;
-  overflow: hidden;
+.glass-card .bg-white h3,
+.glass-card .bg-white h4 {
+  color: var(--color-gray-900) !important;
 }
 
-/* Ensure images don't cause overflow */
-img {
-  max-width: 100%;
-  height: auto;
+.glass-card .bg-white a {
+  color: var(--color-purple-600) !important;
 }
 
-/* Navigation links */
-.nav-link {
-  transition: all 0.3s ease;
-  color: rgba(255, 255, 255, 0.9);
+.glass-card .bg-white a:hover {
+  color: var(--color-purple-700) !important;
 }
 
-.nav-link:hover {
-  transform: translateX(4px);
-  color: white;
+/* ==========================================================================
+   18. BUTTON COMPONENTS
+   ========================================================================== */
+
+.cta-button,
+.ticket-button {
+  display: inline-block;
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  text-decoration: none;
+  transition: background-color var(--transition-base);
+  cursor: pointer;
+  color: var(--color-white);
+  border: none;
 }
 
-/* Update text colors in sidenav for glass effect */
-.sidenav .text-gray-600,
-.sidenav .text-gray-700,
-.sidenav .text-gray-900 {
-  color: rgba(255, 255, 255, 0.9) !important;
+.cta-button-sm {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-sm);
 }
 
-.sidenav h1,
-.sidenav .brand-name {
-  color: white;
+.ticket-button {
+  background-color: var(--color-instagram);
 }
 
-.sidenav svg {
-  color: rgba(255, 255, 255, 0.9);
+.ticket-button:hover {
+  background-color: var(--color-instagram-hover);
 }
 
-.sidenav a:hover svg {
-  color: white;
+/* Social button variants */
+.social-button-spotify {
+  background-color: var(--color-spotify);
 }
 
-/* Project cards */
+.social-button-spotify:hover {
+  background-color: var(--color-spotify-hover);
+}
+
+.social-button-instagram {
+  background-color: var(--color-instagram);
+}
+
+.social-button-instagram:hover {
+  background-color: var(--color-instagram-hover);
+}
+
+.social-button-soundcloud {
+  background-color: var(--color-soundcloud);
+}
+
+.social-button-soundcloud:hover {
+  background-color: var(--color-soundcloud-hover);
+}
+
+.social-button-tiktok {
+  background-color: #000000;
+}
+
+.social-button-tiktok:hover {
+  background-color: var(--color-gray-800);
+}
+
+.social-button-youtube {
+  background-color: var(--color-red-600);
+}
+
+.social-button-youtube:hover {
+  background-color: var(--color-red-700);
+}
+
+.social-button-apple {
+  background-color: var(--color-pink-600);
+}
+
+.social-button-apple:hover {
+  background-color: var(--color-pink-700);
+}
+
+.social-button-songkick {
+  background-color: var(--color-green-600);
+}
+
+.social-button-songkick:hover {
+  background-color: var(--color-green-700);
+}
+
+.social-button-bandsintown {
+  background-color: var(--color-orange-600);
+}
+
+.social-button-bandsintown:hover {
+  background-color: #c2410c;
+}
+
+.social-button-discord {
+  background-color: var(--color-indigo-600);
+}
+
+.social-button-discord:hover {
+  background-color: var(--color-indigo-700);
+}
+
+.social-button-linktree {
+  background-color: var(--color-blue-600);
+}
+
+.social-button-linktree:hover {
+  background-color: var(--color-blue-700);
+}
+
+/* Social Links */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: var(--radius-lg);
+  color: var(--color-white);
+  text-decoration: none;
+  transition: background-color var(--transition-base);
+}
+
+.social-link:hover {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   19. BADGE COMPONENTS
+   ========================================================================== */
+
+.badge {
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.badge-purple {
+  background-color: var(--color-purple-100);
+  color: var(--color-purple-700);
+}
+
+.badge-pink {
+  background-color: var(--color-pink-100);
+  color: var(--color-pink-700);
+}
+
+.badge-blue {
+  background-color: var(--color-blue-100);
+  color: var(--color-blue-700);
+}
+
+.badge-green {
+  background-color: var(--color-green-100);
+  color: var(--color-green-700);
+}
+
+/* ==========================================================================
+   20. SECTION COMPONENTS
+   ========================================================================== */
+
+.about-section,
+.photo-gallery,
+.music-section,
+.shows-section,
+.vinyl-section,
+.discography-section,
+.projects-section,
+.contact-section {
+  margin-bottom: var(--spacing-20);
+}
+
+/* ==========================================================================
+   21. CARD COMPONENTS
+   ========================================================================== */
+
+.show-details-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-4);
+}
+
+.latest-release-card,
+.vinyl-card,
 .project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Inherits from glass-card */
+}
+
+.project-card {
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+  overflow: hidden;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
 }
 
-/* Discography items */
+/* ==========================================================================
+   22. GRID LAYOUTS
+   ========================================================================== */
+
+.discography-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+  .discography-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .discography-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+/* ==========================================================================
+   23. DISCOGRAPHY ITEMS
+   ========================================================================== */
+
 .discography-item {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+  overflow: hidden;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .discography-item:hover {
   transform: translateY(-2px);
 }
 
-/* Image wrapper for proper overlay positioning */
 .image-wrapper {
   position: relative;
   overflow: hidden;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-md);
 }
 
 .discography-item img {
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-base);
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-2);
 }
 
 .discography-item:hover img {
   transform: scale(1.05);
 }
 
-/* Play button overlay */
+/* ==========================================================================
+   24. PLAY BUTTON COMPONENTS
+   ========================================================================== */
+
 .play-button-overlay {
   position: absolute;
   top: 0;
@@ -417,8 +1276,8 @@ img {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 0.5rem;
+  transition: opacity var(--transition-base);
+  border-radius: var(--radius-md);
 }
 
 .discography-item:hover .play-button-overlay,
@@ -429,28 +1288,29 @@ img {
 .play-button {
   width: 60px;
   height: 60px;
-  background: #1db954;
+  background: var(--color-spotify);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .play-button:hover {
   transform: scale(1.1);
-  background: #1ed760;
+  background: var(--color-spotify-hover);
 }
 
 .play-button svg {
   width: 24px;
   height: 24px;
-  fill: white;
-  margin-left: 2px; /* Slight offset to center the triangle */
+  fill: var(--color-white);
+  margin-left: 2px;
 }
 
-/* Large play button for music video section */
 .play-button-large {
   width: 80px;
   height: 80px;
@@ -459,7 +1319,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
 }
@@ -470,121 +1330,14 @@ img {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Hue rotation animation for thank you image */
-@keyframes hue-rotate {
-  0% {
-    filter: hue-rotate(0deg);
-  }
+/* ==========================================================================
+   25. TEXT CONTRAST ENHANCEMENT
+   ========================================================================== */
 
-  100% {
-    filter: hue-rotate(360deg);
-  }
-}
-
-.thank-you-image {
-  transition: filter 1s ease;
-  max-width: min(20rem, 100%);
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Responsive constraints for thank you section */
-@media (max-width: 640px) {
-  .thank-you-image {
-    max-width: min(16rem, 100%);
-  }
-}
-
-@media (max-width: 480px) {
-  .thank-you-image {
-    max-width: min(12rem, 100%);
-  }
-}
-
-.thank-you-image:hover {
-  animation: hue-rotate 5s linear infinite;
-}
-
-.thank-you-image:not(:hover) {
-  filter: hue-rotate(0deg);
-  transition: filter 1s ease;
-}
-
-/* Disable hue-rotate animation for users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .thank-you-image:hover {
-    animation: none;
-  }
-
-  .thank-you-image:not(:hover) {
-    transition: none;
-  }
-}
-
-/* SVG Filter Container - Position it out of document flow */
-svg[height="0"][aria-hidden="true"] {
-  position: fixed;
-}
-
-/* Apply grainy filter to gradient elements to prevent banding */
-/* This uses displacement mapping to add subtle noise without altering gradient colors */
-.grainy-gradient {
-  filter: url(#grain);
-}
-
-/* Grainy background using SVG gradient */
-.grainy-background {
-  position: relative;
-  background: transparent;
-}
-
-.background-gradient {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  filter: url(#grain);
-  z-index: 0;
-  pointer-events: none;
-  will-change: transform;
-}
-
-/* Style circles in the background gradient with blending */
-.background-gradient ellipse,
-.background-gradient circle {
-  mix-blend-mode: screen;
-}
-
-.background-gradient circle {
-  transform: rotate(-45deg);
-  transform-origin: center;
-}
-
-.background-gradient circle:nth-of-type(2) {
-  transform: rotate(-60deg);
-  transform-origin: center;
-}
-
-/* Ensure content is above the background */
-#sidenav-container {
-  position: relative;
-  z-index: 1;
-}
-
-.main-content {
-  position: relative;
-  z-index: 1;
-}
-
-/* Text contrast enhancement for grainy backgrounds */
-/* Uses semi-transparent background overlay + text shadow technique */
 .text-with-contrast {
   position: relative;
-  padding: 1rem 1.25rem;
-  border-radius: 0.5rem;
+  padding: var(--spacing-4) 1.25rem;
+  border-radius: var(--radius-md);
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -594,33 +1347,16 @@ svg[height="0"][aria-hidden="true"] {
   box-sizing: border-box;
 }
 
-/* Ensure the contrast enhancement works well on mobile */
 @media (max-width: 640px) {
   .text-with-contrast {
-    padding: 0.875rem 1rem;
+    padding: 0.875rem var(--spacing-4);
   }
 }
 
 /* ==========================================================================
-   Subtle Premium Entrance Animation System
-   Based on CSS-Tricks: A Handy Little System for Animated Entrances
+   26. ANIMATIONS
    ========================================================================== */
 
-/* Base animation class */
-.animate {
-  animation-duration: 0.8s;
-  animation-delay: 0.3s;
-  animation-name: animate-fade-up;
-  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  animation-fill-mode: backwards;
-  will-change: opacity, transform;
-  /* Ensure smooth animation without layout shifts */
-  backface-visibility: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Subtle fade-up animation - premium feel */
-/* Using smaller translateY and ensuring no layout shift */
 @keyframes animate-fade-up {
   0% {
     opacity: 0;
@@ -632,7 +1368,26 @@ svg[height="0"][aria-hidden="true"] {
   }
 }
 
-/* Staggered delay classes for cascading effect */
+@keyframes hue-rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.animate {
+  animation-duration: 0.8s;
+  animation-delay: 0.3s;
+  animation-name: animate-fade-up;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation-fill-mode: backwards;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
 .delay-1 {
   animation-delay: 0.4s;
 }
@@ -658,9 +1413,142 @@ svg[height="0"][aria-hidden="true"] {
   animation-delay: 1.1s;
 }
 
-/* Respect user's reduced motion preferences */
 @media screen and (prefers-reduced-motion: reduce) {
   .animate {
     animation: none !important;
   }
+}
+
+/* ==========================================================================
+   27. THANK YOU IMAGE
+   ========================================================================== */
+
+.thank-you-image {
+  transition: filter 1s ease;
+  max-width: min(20rem, 100%);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .thank-you-image {
+    max-width: min(16rem, 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .thank-you-image {
+    max-width: min(12rem, 100%);
+  }
+}
+
+.thank-you-image:hover {
+  animation: hue-rotate 5s linear infinite;
+}
+
+.thank-you-image:not(:hover) {
+  filter: hue-rotate(0deg);
+  transition: filter 1s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thank-you-image:hover {
+    animation: none;
+  }
+
+  .thank-you-image:not(:hover) {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   28. BACKGROUND & GRAINY EFFECTS
+   ========================================================================== */
+
+.grainy-background {
+  position: relative;
+  background: transparent;
+}
+
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  filter: url(#grain);
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.background-gradient ellipse,
+.background-gradient circle {
+  mix-blend-mode: screen;
+}
+
+.background-gradient circle {
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+.background-gradient circle:nth-of-type(2) {
+  transform: rotate(-60deg);
+  transform-origin: center;
+}
+
+.grainy-gradient {
+  filter: url(#grain);
+}
+
+svg[height="0"][aria-hidden="true"] {
+  position: fixed;
+}
+
+/* ==========================================================================
+   29. HOVER STATES
+   ========================================================================== */
+
+.hover\:text-gray-900:hover {
+  color: var(--color-gray-900);
+}
+.hover\:text-purple-700:hover {
+  color: var(--color-purple-700);
+}
+.hover\:bg-red-700:hover {
+  background-color: var(--color-red-700);
+}
+.hover\:bg-gray-800:hover {
+  background-color: var(--color-gray-800);
+}
+.hover\:bg-pink-700:hover {
+  background-color: var(--color-pink-700);
+}
+.hover\:bg-green-700:hover {
+  background-color: var(--color-green-700);
+}
+.hover\:bg-orange-700:hover {
+  background-color: #c2410c;
+}
+.hover\:bg-indigo-700:hover {
+  background-color: var(--color-indigo-700);
+}
+.hover\:bg-blue-700:hover {
+  background-color: var(--color-blue-700);
+}
+
+/* ==========================================================================
+   30. UTILITY CLASSES
+   ========================================================================== */
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.text-center {
+  text-align: center;
 }
