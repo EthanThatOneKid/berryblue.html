@@ -713,11 +713,11 @@ hr {
 }
 
 .hamburger:is(:hover, :focus) svg > line {
-  stroke: var(--color-white);
+  stroke: #1a0a2e;
 }
 
 .hamburger svg > line {
-  stroke: rgba(255, 255, 255, 0.9);
+  stroke: #1a0a2e;
 }
 
 /* Sidenav */
