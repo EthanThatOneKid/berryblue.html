@@ -423,11 +423,13 @@
         <nav class="nav" role="navigation" aria-label="Main menu">
           <div>
             <div class="keyring-container">
-              <img
-                src="public/keychain.png"
-                alt="Berryblue keychain"
-                class="w-16 h-16 object-contain mx-auto"
-              >
+              <a href="#" class="block">
+                <img
+                  src="public/keychain.png"
+                  alt="Berryblue keychain"
+                  class="w-16 h-16 object-contain mx-auto"
+                >
+              </a>
             </div>
             <h1 class="text-2xl font-bold mb-8 brand-name">
               Hello! I'm Berryblue
@@ -438,9 +440,9 @@
                 class="nav-link block text-gray-600 hover:text-gray-900"
               >About</a>
               <a
-                href="#shows"
+                href="#upcoming-songs"
                 class="nav-link block text-gray-600 hover:text-gray-900"
-              >Upcoming Shows</a>
+              >What's new</a>
               <a
                 href="#vinyl"
                 class="nav-link block text-gray-600 hover:text-gray-900"
@@ -616,13 +618,7 @@
                 class="text-gray-600 leading-relaxed mb-4 text-with-contrast animate delay-3"
               >
                 Berryblue (Blue) is a pop artist based in SoCal who writes,
-                produces, and performs her own songs. After more than a decade
-                at the piano, she now writes, produces, and performs her own
-                music—blending dreamy melodies with candid, emotionally honest
-                storytelling. From TikTok viral moments to sold-out shows, she's
-                on a mission to create music that makes you feel something real.
-                Every song is a piece of her story, and she can't wait to share
-                it with you.
+                produces, and performs her own berry fresh music.
               </p>
             </div>
             <!-- <img
@@ -639,16 +635,27 @@
           >
             <h3 class="text-2xl font-bold mb-3">Latest Release</h3>
             <div class="flex flex-col md:flex-row gap-4">
-              <a
-                href="https://open.spotify.com/album/3LzqpJcImi7ekDiZixDbMe"
-                target="_blank"
+              <div
+                class="image-wrapper"
+                style="width: 8rem; height: 8rem; flex-shrink: 0"
               >
                 <img
                   src="public/just-friends.jpg"
                   alt="Just Friends single artwork"
-                  class="w-32 h-32 rounded-lg object-cover"
+                  class="w-full h-full object-cover rounded-lg"
                 >
-              </a>
+                <div class="play-button-overlay">
+                  <a
+                    href="https://open.spotify.com/album/3LzqpJcImi7ekDiZixDbMe"
+                    target="_blank"
+                    class="play-button"
+                  >
+                    <svg viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
               <div>
                 <h4 class="text-xl font-semibold">Just Friends</h4>
                 <p class="text-gray-600">Single • 2025</p>
@@ -656,6 +663,49 @@
                   My latest single exploring the complexities of friendship and
                   unrequited love
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Upcoming Songs Section -->
+        <section id="upcoming-songs" class="mb-20">
+          <div class="content-container">
+            <h2 class="text-4xl font-bold mb-6 section-title">
+              What's new with Blue?
+            </h2>
+            <p
+              class="text-gray-600 leading-relaxed mb-8 text-with-contrast"
+            >
+              Get a sneak peek at what's coming next!
+            </p>
+          </div>
+
+          <div class="glass-card p-8 mb-8">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="flex-1">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="badge badge-purple">
+                    What's new with Blue?
+                  </span>
+                  <span class="badge badge-pink">
+                    New original song
+                  </span>
+                </div>
+                <h3 class="text-3xl font-bold mb-3">Kick Back</h3>
+                <p class="text-gray-600 mb-4">
+                  wait new song? can you guess who else is on the track👀 (song:
+                  Kick Back by berryblue ft. ? & ?) i bet you can't guess hehe
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://www.instagram.com/reel/DRK58kVEjvP/?igsh=NTc4MTIwNjQ2YQ=="
+                    target="_blank"
+                    class="cta-button social-button-instagram"
+                  >
+                    Watch sneak peek on Instagram
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -766,6 +816,11 @@
                     </li>
                   </ul>
                 </div>
+                <img
+                  src="public/berry-sit-remastered.png"
+                  alt="Party with me"
+                  class="w-48 h-auto rounded-lg object-contain mt-6"
+                >
               </div>
             </div>
           </div>
@@ -775,7 +830,7 @@
         <section id="vinyl" class="vinyl-section">
           <div class="content-container">
             <h2 class="text-4xl font-bold mb-6 section-title">
-              Vinyl Release
+              Vinyl release
             </h2>
             <p
               class="text-gray-600 leading-relaxed mb-8 text-with-contrast"
@@ -884,7 +939,7 @@
                   <img
                     src="public/just-friends.jpg"
                     alt="Just Friends"
-                    class="w-full object-cover rounded-lg mb-2"
+                    class="w-full object-cover rounded-lg"
                   >
                   <div class="play-button-overlay">
                     <a
@@ -1371,7 +1426,7 @@
           <h2
             class="text-4xl font-bold mb-8 mt-0 section-title"
           >
-            Music Videos
+            Music videos
           </h2>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -1442,7 +1497,7 @@
         <section id="contact" class="contact-section">
           <div class="content-container">
             <h2 class="text-4xl font-bold mb-6 section-title">
-              Let's Connect
+              Let's connect
             </h2>
             <p
               class="text-gray-600 leading-relaxed mb-8 text-with-contrast"

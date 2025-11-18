@@ -870,12 +870,18 @@ hr {
   color: var(--color-white);
 }
 
-.main-content a:not(.play-button):not(.play-button-large) {
+.main-content
+  a:not(.play-button):not(.play-button-large):not(.cta-button):not(
+    .ticket-button
+  ):not(.social-link) {
   color: rgba(255, 255, 255, 0.95);
   text-decoration: underline;
 }
 
-.main-content a:hover:not(.play-button):not(.play-button-large) {
+.main-content
+  a:hover:not(.play-button):not(.play-button-large):not(.cta-button):not(
+    .ticket-button
+  ):not(.social-link) {
   color: var(--color-white);
   text-decoration: underline;
 }
@@ -932,12 +938,18 @@ hr {
   color: var(--color-white) !important;
 }
 
-.glass-card a:not(.play-button):not(.play-button-large) {
+.glass-card
+  a:not(.play-button):not(.play-button-large):not(.cta-button):not(
+    .ticket-button
+  ):not(.social-link) {
   color: rgba(255, 255, 255, 0.95) !important;
   text-decoration: underline;
 }
 
-.glass-card a:hover:not(.play-button):not(.play-button-large) {
+.glass-card
+  a:hover:not(.play-button):not(.play-button-large):not(.cta-button):not(
+    .ticket-button
+  ):not(.social-link) {
   color: var(--color-white) !important;
   text-decoration: underline;
 }
@@ -1010,6 +1022,7 @@ hr {
 
 .ticket-button:hover {
   background-color: var(--color-instagram-hover);
+  text-decoration: none;
 }
 
 /* Social button variants */
@@ -1019,6 +1032,7 @@ hr {
 
 .social-button-spotify:hover {
   background-color: var(--color-spotify-hover);
+  text-decoration: none;
 }
 
 .social-button-instagram {
@@ -1027,6 +1041,7 @@ hr {
 
 .social-button-instagram:hover {
   background-color: var(--color-instagram-hover);
+  text-decoration: none;
 }
 
 .social-button-soundcloud {
@@ -1035,6 +1050,7 @@ hr {
 
 .social-button-soundcloud:hover {
   background-color: var(--color-soundcloud-hover);
+  text-decoration: none;
 }
 
 .social-button-tiktok {
@@ -1043,6 +1059,7 @@ hr {
 
 .social-button-tiktok:hover {
   background-color: var(--color-gray-800);
+  text-decoration: none;
 }
 
 .social-button-youtube {
@@ -1051,6 +1068,7 @@ hr {
 
 .social-button-youtube:hover {
   background-color: var(--color-red-700);
+  text-decoration: none;
 }
 
 .social-button-apple {
@@ -1059,6 +1077,7 @@ hr {
 
 .social-button-apple:hover {
   background-color: var(--color-pink-700);
+  text-decoration: none;
 }
 
 .social-button-songkick {
@@ -1067,6 +1086,7 @@ hr {
 
 .social-button-songkick:hover {
   background-color: var(--color-green-700);
+  text-decoration: none;
 }
 
 .social-button-bandsintown {
@@ -1075,6 +1095,7 @@ hr {
 
 .social-button-bandsintown:hover {
   background-color: #c2410c;
+  text-decoration: none;
 }
 
 .social-button-discord {
@@ -1083,6 +1104,7 @@ hr {
 
 .social-button-discord:hover {
   background-color: var(--color-indigo-700);
+  text-decoration: none;
 }
 
 .social-button-linktree {
@@ -1091,6 +1113,7 @@ hr {
 
 .social-button-linktree:hover {
   background-color: var(--color-blue-700);
+  text-decoration: none;
 }
 
 /* Social Links */
@@ -1319,6 +1342,7 @@ hr {
   opacity: 0;
   transition: opacity var(--transition-base);
   border-radius: var(--radius-md);
+  z-index: 1;
 }
 
 .discography-item:hover .play-button-overlay,
