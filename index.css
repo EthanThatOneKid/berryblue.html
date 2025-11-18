@@ -54,10 +54,16 @@
 
   /* Colors - Oranges */
   --color-orange-600: #ea580c;
+  --color-orange-700: #c2410c;
 
   /* Colors - Indigo */
   --color-indigo-600: #4f46e5;
   --color-indigo-700: #4338ca;
+
+  /* Colors - Additional */
+  --color-black: #000000;
+  --color-dark-purple: #1a0a2e;
+  --color-red-500: #ef4444;
 
   /* Brand Colors */
   --color-spotify: #1db954;
@@ -130,6 +136,24 @@
   --z-sticky: 40;
   --z-fixed: 50;
   --z-modal: 60;
+
+  /* Opacity & Alpha Values */
+  --opacity-high: 0.95;
+  --opacity-medium: 0.9;
+  --opacity-low: 0.8;
+  --opacity-minimal: 0.3;
+
+  /* Pre-composed rgba values */
+  --overlay-dark: rgba(0, 0, 0, 0.6);
+  --overlay-light: rgba(0, 0, 0, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --text-on-glass: rgba(255, 255, 255, 0.95);
+  --text-on-glass-secondary: rgba(255, 255, 255, 0.8);
+  --text-on-glass-tertiary: rgba(255, 255, 255, 0.9);
+  --red-500-alpha-90: rgba(239, 68, 68, 0.9);
+  --red-700-alpha-95: rgba(220, 38, 38, 0.95);
+  --white-alpha-30: rgba(255, 255, 255, 0.3);
 }
 
 /* ==========================================================================
@@ -266,7 +290,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-white);
 }
 .bg-black {
-  background-color: #000000;
+  background-color: var(--color-black);
 }
 .bg-purple-100 {
   background-color: var(--color-purple-100);
@@ -489,6 +513,9 @@ h1, h2, h3, h4, h5, h6 {
 .h-16 {
   height: 4rem;
 }
+.h-32 {
+  height: 8rem;
+}
 .h-64 {
   height: 16rem;
 }
@@ -681,7 +708,7 @@ hr {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   display: none;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid var(--white-alpha-30);
 }
 
 .hamburger::after {
@@ -691,7 +718,7 @@ hr {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--white-alpha-30);
   backdrop-filter: blur(16px);
   border-radius: var(--radius-md);
   pointer-events: none;
@@ -713,21 +740,21 @@ hr {
 }
 
 .hamburger:is(:hover, :focus) svg > line {
-  stroke: #1a0a2e;
+  stroke: var(--color-dark-purple);
 }
 
 .hamburger svg > line {
-  stroke: #1a0a2e;
+  stroke: var(--color-dark-purple);
 }
 
 /* Sidenav */
 .sidenav {
   display: grid;
   grid-template-columns: [nav] 2fr [escape] 1fr;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid var(--glass-border);
   padding: 0 var(--spacing-8) var(--spacing-8) var(--spacing-8);
   overflow-y: auto;
   position: sticky;
@@ -815,7 +842,7 @@ hr {
 
 .nav-link {
   transition: all var(--transition-base);
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-on-glass-tertiary);
   display: block;
   text-decoration: none;
 }
@@ -829,7 +856,7 @@ hr {
 .sidenav .text-gray-600,
 .sidenav .text-gray-700,
 .sidenav .text-gray-900 {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: var(--text-on-glass-tertiary) !important;
 }
 
 .sidenav h1,
@@ -838,7 +865,7 @@ hr {
 }
 
 .sidenav svg {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-on-glass-tertiary);
 }
 
 .sidenav a:hover svg {
@@ -854,11 +881,11 @@ hr {
 .main-content .text-gray-600,
 .main-content .text-gray-700,
 .main-content .text-gray-500 {
-  color: rgba(255, 255, 255, 0.95) !important;
+  color: var(--text-on-glass) !important;
 }
 
 .main-content .text-gray-500 {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: var(--text-on-glass-secondary) !important;
 }
 
 .main-content h1,
@@ -870,20 +897,19 @@ hr {
   color: var(--color-white);
 }
 
-.main-content
-  a:not(.play-button):not(.play-button-large):not(.cta-button):not(
-    .ticket-button
-  ):not(.social-link) {
-  color: rgba(255, 255, 255, 0.95);
+/* Main Content Links */
+.main-content a {
+  color: var(--text-on-glass);
   text-decoration: underline;
 }
 
-.main-content
-  a:hover:not(.play-button):not(.play-button-large):not(.cta-button):not(
-    .ticket-button
-  ):not(.social-link) {
-  color: var(--color-white);
-  text-decoration: underline;
+.main-content .play-button,
+.main-content .play-button-large,
+.main-content .cta-button,
+.main-content .ticket-button,
+.main-content .social-link {
+  color: inherit;
+  text-decoration: none;
 }
 
 .main-content .section-title {
@@ -896,24 +922,30 @@ hr {
    ========================================================================== */
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-glass);
   color: var(--color-white);
   border-radius: var(--radius-lg);
+
+  /* Semantic color variables for glass card context */
+  --text-primary: var(--text-on-glass);
+  --text-secondary: var(--text-on-glass-secondary);
+  --text-tertiary: var(--text-on-glass-tertiary);
 }
 
+/* Glass Card Text Colors */
 .glass-card p,
 .glass-card .text-gray-600,
 .glass-card .text-gray-700,
 .glass-card .text-gray-500 {
-  color: rgba(255, 255, 255, 0.95) !important;
+  color: var(--text-primary) !important;
 }
 
 .glass-card .text-gray-500 {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: var(--text-secondary) !important;
 }
 
 .glass-card h3,
@@ -921,7 +953,7 @@ hr {
   color: var(--color-white);
 }
 
-/* Badge colors in glass cards */
+/* Glass Card Badge Colors */
 .glass-card .bg-purple-100,
 .glass-card .bg-pink-100,
 .glass-card .bg-blue-100,
@@ -938,11 +970,12 @@ hr {
   color: var(--color-white) !important;
 }
 
+/* Glass Card Links */
 .glass-card
   a:not(.play-button):not(.play-button-large):not(.cta-button):not(
     .ticket-button
   ):not(.social-link) {
-  color: rgba(255, 255, 255, 0.95) !important;
+  color: var(--text-primary) !important;
   text-decoration: underline;
 }
 
@@ -955,7 +988,7 @@ hr {
 }
 
 .glass-card .text-purple-600 {
-  color: rgba(255, 255, 255, 0.95) !important;
+  color: var(--text-primary) !important;
 }
 
 .glass-card .text-purple-600:hover {
@@ -1025,95 +1058,65 @@ hr {
   text-decoration: none;
 }
 
-/* Social button variants */
-.social-button-spotify {
-  background-color: var(--color-spotify);
+/* Social Button Base - Data Attribute System */
+[data-social-button] {
+  background-color: var(--social-bg, var(--color-gray-600));
 }
 
-.social-button-spotify:hover {
-  background-color: var(--color-spotify-hover);
+[data-social-button]:hover {
+  background-color: var(--social-bg-hover, var(--color-gray-700));
   text-decoration: none;
 }
 
-.social-button-instagram {
-  background-color: var(--color-instagram);
+/* Social Button Variants */
+[data-social-button="spotify"] {
+  --social-bg: var(--color-spotify);
+  --social-bg-hover: var(--color-spotify-hover);
 }
 
-.social-button-instagram:hover {
-  background-color: var(--color-instagram-hover);
-  text-decoration: none;
+[data-social-button="instagram"] {
+  --social-bg: var(--color-instagram);
+  --social-bg-hover: var(--color-instagram-hover);
 }
 
-.social-button-soundcloud {
-  background-color: var(--color-soundcloud);
+[data-social-button="soundcloud"] {
+  --social-bg: var(--color-soundcloud);
+  --social-bg-hover: var(--color-soundcloud-hover);
 }
 
-.social-button-soundcloud:hover {
-  background-color: var(--color-soundcloud-hover);
-  text-decoration: none;
+[data-social-button="tiktok"] {
+  --social-bg: var(--color-black);
+  --social-bg-hover: var(--color-gray-800);
 }
 
-.social-button-tiktok {
-  background-color: #000000;
+[data-social-button="youtube"] {
+  --social-bg: var(--color-red-600);
+  --social-bg-hover: var(--color-red-700);
 }
 
-.social-button-tiktok:hover {
-  background-color: var(--color-gray-800);
-  text-decoration: none;
+[data-social-button="apple"] {
+  --social-bg: var(--color-pink-600);
+  --social-bg-hover: var(--color-pink-700);
 }
 
-.social-button-youtube {
-  background-color: var(--color-red-600);
+[data-social-button="songkick"] {
+  --social-bg: var(--color-green-600);
+  --social-bg-hover: var(--color-green-700);
 }
 
-.social-button-youtube:hover {
-  background-color: var(--color-red-700);
-  text-decoration: none;
+[data-social-button="bandsintown"] {
+  --social-bg: var(--color-orange-600);
+  --social-bg-hover: var(--color-orange-700);
 }
 
-.social-button-apple {
-  background-color: var(--color-pink-600);
+[data-social-button="discord"] {
+  --social-bg: var(--color-indigo-600);
+  --social-bg-hover: var(--color-indigo-700);
 }
 
-.social-button-apple:hover {
-  background-color: var(--color-pink-700);
-  text-decoration: none;
-}
-
-.social-button-songkick {
-  background-color: var(--color-green-600);
-}
-
-.social-button-songkick:hover {
-  background-color: var(--color-green-700);
-  text-decoration: none;
-}
-
-.social-button-bandsintown {
-  background-color: var(--color-orange-600);
-}
-
-.social-button-bandsintown:hover {
-  background-color: #c2410c;
-  text-decoration: none;
-}
-
-.social-button-discord {
-  background-color: var(--color-indigo-600);
-}
-
-.social-button-discord:hover {
-  background-color: var(--color-indigo-700);
-  text-decoration: none;
-}
-
-.social-button-linktree {
-  background-color: var(--color-blue-600);
-}
-
-.social-button-linktree:hover {
-  background-color: var(--color-blue-700);
-  text-decoration: none;
+[data-social-button="linktree"] {
+  --social-bg: var(--color-blue-600);
+  --social-bg-hover: var(--color-blue-700);
 }
 
 /* Social Links */
@@ -1142,26 +1145,28 @@ hr {
   border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
 }
 
 .badge-purple {
-  background-color: var(--color-purple-100);
-  color: var(--color-purple-700);
+  --badge-bg: var(--color-purple-100);
+  --badge-text: var(--color-purple-700);
 }
 
 .badge-pink {
-  background-color: var(--color-pink-100);
-  color: var(--color-pink-700);
+  --badge-bg: var(--color-pink-100);
+  --badge-text: var(--color-pink-700);
 }
 
 .badge-blue {
-  background-color: var(--color-blue-100);
-  color: var(--color-blue-700);
+  --badge-bg: var(--color-blue-100);
+  --badge-text: var(--color-blue-700);
 }
 
 .badge-green {
-  background-color: var(--color-green-100);
-  color: var(--color-green-700);
+  --badge-bg: var(--color-green-100);
+  --badge-text: var(--color-green-700);
 }
 
 /* ==========================================================================
@@ -1335,7 +1340,7 @@ hr {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--overlay-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1350,10 +1355,11 @@ hr {
   opacity: 1;
 }
 
+/* Play Button Component */
 .play-button {
-  width: 60px;
-  height: 60px;
-  background: var(--color-spotify);
+  width: var(--play-button-size, 60px);
+  height: var(--play-button-size, 60px);
+  background: var(--play-button-bg, var(--color-spotify));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1366,7 +1372,7 @@ hr {
 
 .play-button:hover {
   transform: scale(1.1);
-  background: var(--color-spotify-hover);
+  background: var(--play-button-bg-hover, var(--color-spotify-hover));
 }
 
 .play-button svg {
@@ -1377,22 +1383,22 @@ hr {
 }
 
 .play-button-large {
-  width: 80px;
-  height: 80px;
-  background: rgba(239, 68, 68, 0.9);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  --play-button-size: 80px;
+  --play-button-bg: var(--red-500-alpha-90);
+  --play-button-bg-hover: var(--red-700-alpha-95);
   transition: all var(--transition-base);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
 }
 
 .play-button-large:hover {
-  transform: scale(1.1);
-  background: rgba(220, 38, 38, 0.95);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.play-button-large svg {
+  width: 32px;
+  height: 32px;
+  margin-left: 3px;
 }
 
 /* ==========================================================================
@@ -1403,11 +1409,11 @@ hr {
   position: relative;
   padding: var(--spacing-4) 1.25rem;
   border-radius: var(--radius-md);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--overlay-light);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
-  color: rgba(255, 255, 255, 0.98) !important;
+  color: var(--text-on-glass) !important;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -1635,7 +1641,7 @@ svg[height="0"][aria-hidden="true"] {
   background-color: var(--color-green-700);
 }
 .hover\:bg-orange-700:hover {
-  background-color: #c2410c;
+  background-color: var(--color-orange-700);
 }
 .hover\:bg-indigo-700:hover {
   background-color: var(--color-indigo-700);
@@ -1653,7 +1659,4 @@ svg[height="0"][aria-hidden="true"] {
 }
 .overflow-hidden {
   overflow: hidden;
-}
-.text-center {
-  text-align: center;
 }
