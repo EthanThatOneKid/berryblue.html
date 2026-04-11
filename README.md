@@ -38,7 +38,7 @@ deno fmt index.html
 
 ### Deployment
 
-Commits to `main` automatically deploy to production via Cloudflare Pages.
+Commits to `main` automatically deploy to production via GitHub Pages.
 
 ---
 
