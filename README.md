@@ -10,11 +10,9 @@ This is the portfolio website for Berryblue, a pop artist from Dallas-Fort Worth
 
 ## Development
 
-### Prerequisites
-
-- [Deno](https://deno.land) - JavaScript/TypeScript runtime
-
 ### Running Locally
+
+Open `index.html` directly in your browser, or use a local server:
 
 ```bash
 deno run --serve --watch index.html
