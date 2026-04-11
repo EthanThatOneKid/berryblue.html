@@ -7,6 +7,13 @@ Worth, Texas now based in Los Angeles, California.
 
 Live at: <https://berryblue.etok.me>
 
+## Why Berryblue?
+
+As a fan, I've listened to Berryblue on repeat since discovering them. I'm a Top
+100 Listener and among the Top 0.1% of viewers on YouTube.
+
+![Top 100 Listener](public/top-100-listener.png)
+
 ## Development
 
 ### Running locally
