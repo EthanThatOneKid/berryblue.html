@@ -1,16 +1,15 @@
-# Berryblue Pop Artist Portfolio
+# Berryblue Pop Artist Fansite
 
-This is the portfolio website for Berryblue, a pop artist from Dallas-Fort Worth.
+This is an unofficial fan website for Berryblue, a pop artist from Dallas-Fort
+Worth, Texas now based in Los Angeles, California.
 
-## Production Site
+## Production site
 
-🔗 **Live at**: https://berryblue.etok.me
-
----
+Live at: <https://berryblue.etok.me>
 
 ## Development
 
-### Running Locally
+### Running locally
 
 Open `index.html` directly in your browser, or use a local server:
 
@@ -20,7 +19,7 @@ deno run --serve --watch index.html
 
 Then open http://localhost:8000
 
-### Making Changes
+### Making changes
 
 1. Edit `index.html` directly
 2. Images go in `public/`
@@ -31,12 +30,13 @@ Then open http://localhost:8000
 Before committing, format the code:
 
 ```bash
-deno fmt index.html
+deno fmt
 ```
 
 ### Deployment
 
-Commits to `main` automatically deploy to production via GitHub Pages.
+Commits to `main` automatically deploy to production via
+[GitHub Pages](https://pages.github.com/).
 
 ---
 
